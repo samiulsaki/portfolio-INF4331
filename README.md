@@ -1,3 +1,3 @@
-# INF3331-aschowdh
-
-### #Assignment 1
+# INF4331-aschowdh
+## Problemløsning med høynivå-språk - UiO /2017
+#### #Assignment 1
