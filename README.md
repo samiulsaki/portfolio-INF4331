@@ -22,3 +22,6 @@ Folder		|	Tasks	|	Files
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.1		| calc.sh
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.2		| clock.sh
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.3		| bookmark.sh
+
+##### Author:
+###### _Samiul Saki Chowdhury_; *email: _samiulsaki@gmail.com_ / _aschowdh@ifi.uio.no_*; *Nettverk og systemadministrasjon - 2016*
