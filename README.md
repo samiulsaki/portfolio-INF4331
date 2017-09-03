@@ -8,8 +8,8 @@
 	- [x] 1.3: What is a conflict and how to resolve it? (optional)
 
 * ___[Assignment 2](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_2.pdf) : (bash)___
-	- [ ] 2.1: Calculator
-	- [ ] 2.2: Clock
+	- [x] 2.1: Calculator
+	- [x] 2.2: Clock
 	- [ ] 2.3: Personal assistant
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
