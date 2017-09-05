@@ -10,7 +10,7 @@
 * ___[Assignment 2](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_2.pdf) : (bash)___
 	- [x] 2.1: Calculator
 	- [x] 2.2: Clock
-	- [ ] 2.3: Personal assistant
+	- [X] 2.3: Personal assistant
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
