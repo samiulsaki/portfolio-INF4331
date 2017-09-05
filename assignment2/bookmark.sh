@@ -4,19 +4,14 @@
 # The script takes arguments from user to do the corresponding tasks:
 # 1) source bookmark.sh: exports all the bookmarks (if there is any) and print out with the available bookmarks
 # (if there is any). Recommend to always run this command first.
-#
 # 2) source bookmark.sh -a directory_name: creates a bookmark along with the current path of the directory.
 # Then it exports it to the variable which is same as the given directory_name. Running cd $directory_name
 # will direct to corresponding directory.
-#
 # 3) source bookmark.sh -r directory_name: will remove the bookmark of the given directory from the bookmark
 # list. It will also remove the variable name created for that bookmark.
-#
 # 4) source bookmark.sh -h: will open the script usage help menu.
-#
 # Inserting any wrong flag rather than -a | -A | -r | -R | -h will print out the help menu automatically.
-#
-# Disclaimer
+# Disclaimer:
 # The script is not completely bug free. It does not run on Unix system as declare -A is defined in Unix.
 # Upon sourcing the script for first time might throw out bookmark exporting error. If do please ignore the
 # message and run it again.
@@ -70,11 +65,6 @@ function bookmark_import {
 
 		[-][h] )
 			bookmark_usage;;
-			#for i in "${!bookmark[@]}";
-			#	do
-			#		echo "Directory= $(tput setaf 3)$i$(tput sgr0)  :  Path= $(tput setaf 3)${bookmark[$i]}$(tput sgr0)";
-			#	done;
-			#echo -en "\n\n"; bookmark_usage;;
 
 	        * )
 			bookmark_usage;;
