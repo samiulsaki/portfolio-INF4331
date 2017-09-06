@@ -12,7 +12,7 @@ function calculator {
 
 [ $# -lt 2 ] && calculator
 
-# Take Variables:
+# Take Arguments
 operation=$1;
 shift 
 sum=$1;
@@ -21,7 +21,7 @@ max=$1;
 min=$1; 
 shift
 
-# Main Calculation:
+# Main Calculation
 for args in $@; do
 	sum=$((${sum} + ${args}))
 	pro=$((${pro} * ${args}))

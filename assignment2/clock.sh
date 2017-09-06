@@ -7,7 +7,7 @@ function clock {
 	exit
 }
 
-# Take Variables
+# Take Argument
 operation=$1
 
 # Cases

@@ -24,10 +24,12 @@
 clear
 declare -A bookmark
 
+# Take Arguments
 operation=$1;
 dir=$2;
 path=$(pwd);
 
+# Usage 
 function bookmark_usage {
         echo -en "\nYou must provide all the arguments \n"
         echo -en "Use format: $(tput setaf 1)source bookmark.sh $(tput setaf 5)-a(adding bookmark) | -r(removing bookmark) $(tput setaf 3)directory_name\n"
@@ -36,6 +38,7 @@ function bookmark_usage {
         return
 }
 
+# Bookmark Export
 function bookmark_export {
 	touch ~/.bookmark
 	echo -en "\nShowing all the bookmarks (if any):\n";
@@ -47,10 +50,12 @@ function bookmark_export {
 	        done < ~/.bookmark
 }
 
+# Error
 function bookmark_error {
 		echo "Opps!! You forgot to insert a directory name" && bookmark_usage
 }
 
+# Cases
 function bookmark_import {
 	case "${operation}" in
 		[-][aA] )
@@ -75,7 +80,7 @@ function bookmark_import {
 	esac
 }
 
-
+# Select Functions
 if [ $# == "0" ]; then
 	bookmark_export
 elif [ $# == 1 ]; then
