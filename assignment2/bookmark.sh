@@ -29,7 +29,7 @@ operation=$1;
 dir=$2;
 path=$(pwd);
 
-# Usage 
+# Usage/Help 
 function bookmark_usage {
         echo -en "\nYou must provide all the arguments \n"
         echo -en "Use format: $(tput setaf 1)source bookmark.sh $(tput setaf 5)-a(adding bookmark) | -r(removing bookmark) $(tput setaf 3)directory_name\n"
