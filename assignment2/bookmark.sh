@@ -16,7 +16,8 @@
 # Inserting any wrong flag rather than -a | -A | -r | -R | -h will print out the help menu automatically.
 #
 # Disclaimer:
-# The script is not completely bug free. It does not run on Unix system as declare -A is defined in Unix.
+# The script is not completely bug free. It does not run on Unix system as declare -A is defined in Unix 
+# (I am using bash3). It should work with OSX with bash4 installed and with shebang as #/usr/local/bin/bash.
 # Upon sourcing the script for first time might throw out bookmark exporting error. If do please ignore the
 # message and run it again.
 #==============================================================================================#
