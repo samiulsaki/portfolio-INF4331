@@ -10,7 +10,13 @@
 * ___[Assignment 2](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_2.pdf) : (bash)___
 	- [x] 2.1: Calculator
 	- [x] 2.2: Clock
-	- [X] 2.3: Personal assistant
+	- [x] 2.3: Personal assistant
+
+* ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_3.pdf) : (python)___
+	- [ ] 3.1: File finder
+	- [ ] 3.2: Unit test for pynomials
+	- [ ] 3.3: Polynomials
+	- [ ] 3.4: More polynomials
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -25,6 +31,10 @@ Folder		|	Tasks	|	Files
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.1		| calc.sh
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.2		| clock.sh
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.3		| bookmark.sh
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.1		| 
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.2		| 
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.3		| 
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.4		| 
 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
