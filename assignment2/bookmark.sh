@@ -22,7 +22,7 @@
 # message and run it again.
 #==============================================================================================#
 
-clear
+#clear
 declare -A bookmark
 
 # Take Arguments
