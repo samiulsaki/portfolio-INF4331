@@ -25,11 +25,6 @@ To avoid this absoulte path of the files are printed.
 '''
 
 import os, sys
-import random
-import urllib
-import subprocess
-import re
-from collections import Counter
 
 os.system('clear')
 
