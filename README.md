@@ -14,7 +14,7 @@
 
 * ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment3/assignment_3.pdf) : (python)___
 	- [x] 3.1: File finder
-	- [ ] 3.2: Unit test for pynomials
+	- [ ] 3.2: Unit test for polynomials
 	- [ ] 3.3: Polynomials
 	- [ ] 3.4: More polynomials
 
