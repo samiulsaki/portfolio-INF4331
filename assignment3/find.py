@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 # Find script
 '''
 It would be fine if just root along with file name will be printed on the shell.abs
