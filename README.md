@@ -32,7 +32,7 @@ Folder		|	Tasks	|	Files
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.2		| clock.sh
 [*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.3		| bookmark.sh
 [*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.1		| find.py
-[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.2		| 
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.2		| test_polynomials.py
 [*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.3		| 
 [*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.4		| 
 
