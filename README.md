@@ -12,7 +12,7 @@
 	- [x] 2.2: Clock
 	- [x] 2.3: Personal assistant
 
-* ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_3.pdf) : (python)___
+* ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment3/assignment_3.pdf) : (python)___
 	- [ ] 3.1: File finder
 	- [ ] 3.2: Unit test for pynomials
 	- [ ] 3.3: Polynomials
