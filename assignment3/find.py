@@ -1,4 +1,29 @@
 #!/usr/bin/env python3
+
+# Find script
+'''
+It would be fine if just root along with file name will be printed on the shell.abs
+But that would print out only the given directory argument ar root folder instead of
+its absolute path. for example if the arguments are as follows:
+
+python find.py .txt .
+
+this will only print as such:
+
+./filename1.txt
+./filename2.txt
+....
+
+instead of 
+
+absolute_path_of_file/filename1.txt
+absolute_path_of_file/filename2.txt
+....
+
+To avoid this absoulte path of the files are printed.
+
+'''
+
 import os, sys
 import random
 import urllib
@@ -10,9 +35,6 @@ os.system('clear')
 
 extension=sys.argv[1]
 dir=sys.argv[2]
-#dir="/Users/samiulsaki/Documents//inf4331nsa/INF3331-aschowdh/assignment3"
-#dir1="/Users/samiulsaki/Documents/inf4331nsa/UiO-INF3331.github.io/assignments"
-
 
 def recursive(dir):
   for root,folders,files in os.walk(dir):
