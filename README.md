@@ -14,9 +14,9 @@
 
 * ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment3/assignment_3.pdf) : (python)___
 	- [x] 3.1: File finder
-	- [ ] 3.2: Unit test for polynomials
-	- [ ] 3.3: Polynomials
-	- [ ] 3.4: More polynomials
+	- [x] 3.2: Unit test for polynomials
+	- [x] 3.3: Polynomials
+	- [x] 3.4: More polynomials
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -25,16 +25,16 @@
 
 Folder		|	Tasks	|	Files
 -----------	| -------------	| --------------
-[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.1		| helloworld.txt
-[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.2 		| greeting.txt
-[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.3 		| gitconflict.txt
-[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.1		| calc.sh
-[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.2		| clock.sh
-[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.3		| bookmark.sh
-[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.1		| find.py
-[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.2		| test_polynomials.py
-[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.3		| 
-[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.4		| 
+[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.1		      | helloworld.txt
+[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.2 	      | greeting.txt
+[*assignment1*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment1)	| 1.3 	      | gitconflict.txt
+[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.1		      | calc.sh
+[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.2		      | clock.sh
+[*assignment2*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment2)	| 2.3		      | bookmark.sh
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.1		      | find.py
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.2		      | test_polynomials.py
+[*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	| 3.3, 3.4		| polynomials.py
+
 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)

@@ -19,7 +19,7 @@ absolute_path_of_file/filename1.txt
 absolute_path_of_file/filename2.txt
 ....
 
-To avoid this absoulte path of the files are printed.
+To avoid this absoulte path of the files are printed along with the filenames.
 
 '''
 
