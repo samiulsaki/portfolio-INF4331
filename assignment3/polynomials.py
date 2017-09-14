@@ -7,7 +7,10 @@ The script does most of the task required to fulfill this assignment 3. But it i
 For example, the degree or coeeficiency of the Polynomials cannot take an expression in the form 
 of Polynomials instead the it is counted by the number of elements in the list. This is not 
 expected and not the task goal. Degree function is set here just to make the programme complete.
-it can be easily removed by commenting out the degree function.
+it can be easily removed by commenting out the degree function. Also not sure the __mul__ and __rmul__
+suppose to do the same thing. Thought it might be the arithmetic with Pynomials with any vectors and if 
+the vectors are given as argument it will convert to Polynomials first and then do the arithmetic. It 
+did not work.
 
 Other than that all other functions are running perfectly as it was required for this script.
 
@@ -26,15 +29,25 @@ class Polynomial:
         else:
             raise "Wrong arguments : %s" % val
         return
-    def __add__(self,p):return Polynomial(add(self.plist,plist(p)))
-    def __radd__(self,p): return Polynomial(add(self.plist,plist(p)))
-    def __sub__(self,p):  return Polynomial(sub(self.plist,plist(p)))
-    def __mul__(self,p): return Polynomial(multiply(self.plist,plist(p)))
-    def __rmul__(self,p): return Polynomial(multiply(self.plist,plist(p)))
-    def __deg__(self): return Polynomial(degree(self.plist))
-    def __repr__(self): return string(self.plist)
-    def __call__(self,x1,x2=None): return peval(self.plist,x1,x2)
-    def __eq__(self, p): return not (self - p)
+
+    def __add__(self,p): 
+        return Polynomial(add(self.plist,plist(p)))
+    def __radd__(self,p): 
+        return Polynomial(add(self.plist,plist(p)))
+    def __sub__(self,p):  
+        return Polynomial(sub(self.plist,plist(p)))
+    def __mul__(self,p): 
+        return Polynomial(multiply(self.plist,plist(p)))
+    def __rmul__(self,p): 
+        return Polynomial(multiply(self.plist,plist(p)))
+    def __deg__(self): 
+        return Polynomial(degree(self.plist))
+    def __repr__(self): 
+        return string(self.plist)
+    def __call__(self,x1,x2=None): 
+        return value(self.plist,x1,x2)
+    def __eq__(self, p): 
+        return not (self - p)
    
 def degree(self):
 	return len(self) - 1 
@@ -53,7 +66,7 @@ def plist(term):
         raise "Can't be set : %s" % term
     return None
 
-def peval(plist,x,x2=None):
+def value(plist,x,x2=None):
     val = 0
     if x2:
         for i in range(len(plist)): val += plist[i]*(pow(x2,i)-pow(x,i))
@@ -77,13 +90,15 @@ def multiple(p,c):
     return [c*pi for pi in p]
 
 def multiply(p1,p2):
-    if len(p1) > len(p2): short,long = p2,p1
-    else: short,long = p1,p2
+    if len(p1) > len(p2): 
+        short,long = p2,p1
+    else: 
+        short,long = p1,p2
     new = []
-    for i in range(len(short)): new = add(new,multiply_w_single(long,short[i],i))
+    for i in range(len(short)): new = add(new,multiply_with_integer(long,short[i],i))
     return new
 
-def multiply_w_single(p,c,i):
+def multiply_with_integer(p,c,i):
     new = [0]*i 
     for pi in p: new.append(pi*c)
     return new
@@ -117,7 +132,7 @@ def string_convert(c,i):
         return "%sx^%d" % (c,i)
     return "%s" % c
 
-def test():
+def sample_usage():
     print("\nTesting......")
     p = Polynomial([1, 2, 1]) # 1 + 2x + x^2
     q = Polynomial([9, 5, 0, 6]) # 9 + 5x + 6x^3
@@ -148,4 +163,4 @@ def test():
     print("\n\t(Similar to above) Testing if can multiply three sets {}, {}, {} : {}".format(x,y,z, Polynomial(x)*Polynomial(y)*Polynomial(z)))
  
 if __name__ == '__main__':
-    test()
+    sample_usage()

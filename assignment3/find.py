@@ -5,7 +5,8 @@ It would be fine if just root along with file name will be printed on the shell.
 But that would print out only the given directory argument ar root folder instead of
 its absolute path. For example if the arguments are as follows:
 
-python find.py .txt .
+python find.py <file_extention> <file_location>
+e.g.: python find.py .txt .
 
 this will only print as such:
 
