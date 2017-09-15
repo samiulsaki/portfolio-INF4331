@@ -2,7 +2,7 @@
 
 ## *Problemløsning med høynivå-språk - UiO /2017* ##
 
-* ___[Assignment 1](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_1.pdf) : (git intro)___
+* ___[Assignment 1](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment1/assignment_1.pdf) : (git intro)___
 	- [x] 1.1: First git repository
 	- [x] 1.2: Getting back old versions of files
 	- [x] 1.3: What is a conflict and how to resolve it? (optional)
