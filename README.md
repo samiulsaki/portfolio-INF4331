@@ -2,31 +2,31 @@
 
 ## *Problemløsning med høynivå-språk - UiO /2017* ##
 
-* ___[Assignment 1](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment1/assignment_1.pdf) : (git intro)___
+* ___[Assignment 1](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment1/assignment_1.pdf) : (git intro): 5 Points___
 	- [x] 1.1: First git repository
 	- [x] 1.2: Getting back old versions of files
 	- [x] 1.3: What is a conflict and how to resolve it? (optional)
 
-* ___[Assignment 2](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_2.pdf) : (bash)___
+* ___[Assignment 2](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment2/assignment_2.pdf) : (bash): 10 Points___
 	- [x] 2.1: Calculator
 	- [x] 2.2: Clock
 	- [x] 2.3: Personal assistant
 
-* ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment3/assignment_3.pdf) : (python)___
-	- [x] 3.1: File finder
-	- [x] 3.2: Unit test for polynomials
-	- [x] 3.3: Polynomials
-	- [x] 3.4: More polynomials
+* ___[Assignment 3](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment3/assignment_3.pdf) : (python): 15 Points___
+	- [x] 3.1: File finder (5 Points)
+	- [x] 3.2: Unit test for polynomials (3 Points)
+	- [x] 3.3: Polynomials (5 Points)
+	- [x] 3.4: More polynomials (2 Points)
 
-* ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (fast python)___
-	- [ ] 4.1: Writing test cases
-	- [ ] 4.2: Python implementation
-	- [ ] 4.3: numpy implementation
-	- [ ] 4.4: numba
-    - [ ] 4.5: Cython
-    - [ ] 4.6: Compute smarter, not harder
-    - [ ] 4.7: Making a module
-    - [ ] 4.8: Bonus contest: taking it to the limit 
+* ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (fast python): 40 + 5 Bonus points___
+	- [ ] 4.1: Writing test cases (4 Points)
+	- [ ] 4.2: Python implementation (6 Points)
+	- [ ] 4.3: numpy implementation (6 Points)
+	- [ ] 4.4: numba (6 Points)
+    - [ ] 4.5: Cython (10 Points)
+    - [ ] 4.6: Compute smarter, not harder (5 Points)
+    - [ ] 4.7: Making a module (3 Points)
+    - [ ] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
