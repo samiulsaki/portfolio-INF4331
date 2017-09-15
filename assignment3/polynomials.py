@@ -161,7 +161,7 @@ def sample_usage():
     z = [18, 28, 44]
     print("\n\tAddition of {} and {} yields {} ".format(x , y, string(add(x,y))))
     print("\n\tThe degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x, Polynomial(x), degree(x))) # Does what it suppose to do
-    print("\n\tAnother degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x1,Polynomial(x1), degree(x1))) # To test zeros
+    print("\n\tAnother degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x1,Polynomial(x1), degree(x1))) # To test zeros as coefficients
     print("\n\tAnother degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x2,Polynomial(x2), degree(x2))) # Highest polynomial coefficieints are zeros
     print("\n\tSubstruction of {} and {} yields {}".format(Polynomial([1,2,3]), Polynomial([1,2]), Polynomial([1,2,3]) - Polynomial([1,2])))
     print("\n\tAdding {} and {} yields {}".format(p, q, p+q))
