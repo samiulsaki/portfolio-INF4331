@@ -21,7 +21,7 @@ q = Polynomial([9, 5, 0, 6]) # 9 + 5x + 6x^3
 r = Polynomial([10, 7, 1, 6])
 x = [51, 15, 26]
 x1 = [10, 20, 0, 0, 50]
-x2 = [10, 50]
+x2 = [10, 50, 0, 0]
 y = [20, 31, 73]
 z = [18, 28, 44]
 k = Polynomial([22,33,0,55,66,77,88])
@@ -45,6 +45,6 @@ def test():
   assert string(multiply(x , y)) == "1898x^4 + 1901x^3 + 4708x^2 + 1881x + 1020" # Test: Multiply function
   assert degree(x) == "2" # Test: Check highest (power of x) degree of leading polynomial coefficients (not the best function)
   assert degree(x1) == "4" # Test: Another degree test with some coefficients are zeros
-  assert degree(x2) == "0" # Test: In this test the highest (power of x) degrees are zeros
+  assert degree(x2) == "1" # Test: In this test the highest (power of x) degrees are zeros
   assert str(string(power([1,1,12],3))) == "1728x^2 + x + 1" # Test: Power
   

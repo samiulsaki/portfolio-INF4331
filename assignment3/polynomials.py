@@ -8,7 +8,7 @@ For example, the degree or coeeficiency of the Polynomials cannot take an expres
 of Polynomials instead the it is taking the vectors and changing into Polynomials and then counting 
 degrees. This is not expected. Degree sould be counted as length - 1 instead I counted as if the 
 (highest power of x) degree is non zero than that is the degree otherwise its 0. In this case something like 
-2x +1 will show 0 (not 1). I might misunderstood the task.
+2x +1 will show 1. I might misunderstood the task.
 
 Also not sure the __mul__ and __rmul__ suppose to do the same thing. Thought it might be the arithmetic 
 with Pynomials with any vectors and if the vectors are given as argument it will convert to Polynomials 
@@ -59,7 +59,7 @@ def degree(self):
     if deg.isdigit():
         return deg
     else:
-        return "0"
+        return "1"
 
 
 def plist(term):
@@ -156,7 +156,7 @@ def sample_usage():
     print("\nAdditional Testing.....")
     x = [51, 15, 26]
     x1 = [10, 20, 0, 0, 50]
-    x2 = [10, 50]
+    x2 = [10, 50, 0, 0]
     y = [20, 31, 73]
     z = [18, 28, 44]
     print("\n\tAddition of {} and {} yields {} ".format(x , y, string(add(x,y))))
