@@ -5,12 +5,14 @@ The Polynomials Script
 
 The script does most of the task required to fulfill this assignment 3. But it is not perfect. 
 For example, the degree or coeeficiency of the Polynomials cannot take an expression in the form 
-of Polynomials instead the it is counted by the number of elements in the list. This is not 
-expected and not the task goal. Degree function is set here just to make the programme complete.
-it can be easily removed by commenting out the degree function. Also not sure the __mul__ and __rmul__
-suppose to do the same thing. Thought it might be the arithmetic with Pynomials with any vectors and if 
-the vectors are given as argument it will convert to Polynomials first and then do the arithmetic. It 
-did not work.
+of Polynomials instead the it is taking the vectors and changing into Polynomials and then counting 
+degrees. This is not expected. Degree sould be counted as length - 1 instead I counted as if the 
+highest coefficient is non zero than that is the degree otherwise its 0. In this case something like 
+2x +1 will show 0 (not 1).
+
+Also not sure the __mul__ and __rmul__ suppose to do the same thing. Thought it might be the arithmetic 
+with Pynomials with any vectors and if the vectors are given as argument it will convert to Polynomials 
+first and then do the arithmetic. 
 
 Other than that all other functions are running perfectly as it was required for this script.
 
@@ -50,7 +52,15 @@ class Polynomial:
         return not (self - p)
    
 def degree(self):
-	return len(self) - 1 
+    a = str(string(self))
+    start = a.find('x^') + 2
+    end = a.find('+', start)-1
+    deg = a[start:end]
+    if deg.isdigit():
+        return deg
+    else:
+        return "0"
+
 
 def plist(term):
     try:
@@ -145,10 +155,14 @@ def sample_usage():
     
     print("\nAdditional Testing.....")
     x = [51, 15, 26]
+    x1 = [10, 20, 0, 0, 50]
+    x2 = [10, 50]
     y = [20, 31, 73]
     z = [18, 28, 44]
     print("\n\tAddition of {} and {} yields {} ".format(x , y, string(add(x,y))))
-    print("\n\tThe degree of coefficients of {} is {}".format(x, degree(x))) # Not the right function
+    print("\n\tThe degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x, Polynomial(x), degree(x))) # Does what it suppose to do
+    print("\n\tAnother degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x1,Polynomial(x1), degree(x1))) # To test zeros
+    print("\n\tAnother degree of polynomial coefficients of {} (i.e.,{}) is {}".format(x2,Polynomial(x2), degree(x2))) # Highest polynomial coefficieints are zeros
     print("\n\tSubstruction of {} and {} yields {}".format(Polynomial([1,2,3]), Polynomial([1,2]), Polynomial([1,2,3]) - Polynomial([1,2])))
     print("\n\tAdding {} and {} yields {}".format(p, q, p+q))
     print("\n\tMultiplication of {} with {} yields {}".format(-1, Polynomial([1,2,3]), (-1*Polynomial([1,2,3]))))
