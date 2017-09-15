@@ -172,9 +172,9 @@ def sample_usage():
     print("\n\tAnd the second similar test of {} yields {}".format([0,1], string([0,1])))
     print("\n\tTesting power {} of {} yields {}".format([1,1,12], 3, string(power([1,1,12],3))))
     print("\n\tTesting if can handle signs in {} : {}".format([0,1,-2,0], string([0,1,-2,0])))
-    print("\n\tTesting if can add three polynomials {} , {} , {} : {}".format(p,q,r,p+q+r))
-    print("\n\tTesting if can multiply three polynomials {} , {} , {} : {}".format(p,q,r,p*q*r))
-    print("\n\t(Similar to above) Testing if can multiply three vectors {}, {}, {} : {}".format(x,y,z, Polynomial(x)*Polynomial(y)*Polynomial(z)))
+    print("\n\tTesting if can add three polynomials {} , {} and {} : {}".format(p,q,r,p+q+r))
+    print("\n\tTesting if can multiply three polynomials {} , {} and {} : {}".format(p,q,r,p*q*r))
+    print("\n\t(Similar to above) Testing if can multiply three vectors {}, {} and {} : {}".format(x,y,z, Polynomial(x)*Polynomial(y)*Polynomial(z)))
  
 if __name__ == '__main__':
     sample_usage()
