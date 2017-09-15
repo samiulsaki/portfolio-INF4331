@@ -7,8 +7,8 @@ The script does most of the task required to fulfill this assignment 3. But it i
 For example, the degree or coeeficiency of the Polynomials cannot take an expression in the form 
 of Polynomials instead the it is taking the vectors and changing into Polynomials and then counting 
 degrees. This is not expected. Degree sould be counted as length - 1 instead I counted as if the 
-highest coefficient is non zero than that is the degree otherwise its 0. In this case something like 
-2x +1 will show 0 (not 1).
+(highest power of x) degree is non zero than that is the degree otherwise its 0. In this case something like 
+2x +1 will show 0 (not 1). I might misunderstood the task.
 
 Also not sure the __mul__ and __rmul__ suppose to do the same thing. Thought it might be the arithmetic 
 with Pynomials with any vectors and if the vectors are given as argument it will convert to Polynomials 

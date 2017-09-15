@@ -43,8 +43,8 @@ def test():
   assert string(add(x,y)) == "99x^2 + 46x + 71" # Test: Addition function
   assert string(sub(x,y)) == "-47x^2 - 16x + 31" # Test: Substraction function
   assert string(multiply(x , y)) == "1898x^4 + 1901x^3 + 4708x^2 + 1881x + 1020" # Test: Multiply function
-  assert degree(x) == "2" # Test: Check degree of highest polynomial coefficients (not the best function)
-  assert degree(x1) == "4" # Test: Another degree test with zeros
-  assert degree(x2) == "0" # Test: In this test the highest degrees are zeros
+  assert degree(x) == "2" # Test: Check highest (power of x) degree of leading polynomial coefficients (not the best function)
+  assert degree(x1) == "4" # Test: Another degree test with some coefficients are zeros
+  assert degree(x2) == "0" # Test: In this test the highest (power of x) degrees are zeros
   assert str(string(power([1,1,12],3))) == "1728x^2 + x + 1" # Test: Power
   
