@@ -1,13 +1,15 @@
+# cython: cdivision=True
 
-from numpy import linspace, sum
+cimport cython
 
-cpdef float cython_integrate(f, float a, float b, int N):
-    cdef float height
-    height = float(b-a)/N
-    cdef double x
-    x = linspace(a, b, N+1)
-    cdef float s 
-    s = sum(f(x)) - 0.5*f(a) - 0.5*f(b)
-    return height*s
-
-
+cdef double f(double x):
+    return x * x
+    
+def cython_integrate(f, double a, double b, int N):
+    cdef:
+        double height = (b - a) / N
+        double sum = 0
+        int i
+    for i in range(N):
+        sum = f(a + i*height)
+    return sum * height

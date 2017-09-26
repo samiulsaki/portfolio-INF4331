@@ -1,0 +1,21 @@
+
+#from numpy import linspace, sum
+
+from numba import jit
+
+@jit
+def f(x):
+    return x**2
+
+@jit
+def numba_integrate_j(f, a, b, N):
+    height = (b-a)/N
+    sum = 0
+    for i in range(N):
+        sum += f( a + i*height)
+    return sum * height
+
+''' N=10000
+a=0
+b=1
+print(numba_integrate_j(f,a,b,N)) '''

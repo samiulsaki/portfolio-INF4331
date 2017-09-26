@@ -6,6 +6,7 @@ f2 = lambda x: 3*x + 2
 
 args = [[f1, 0, 1, 1000], [f1, 0, 1, 1000000], [f2, 0, 2, 1000], [f1, 0, 3, 100000] ]
 
+print('Test comparison: Pure vs Numpy\n')
 for i in range(len(args)):
     #print("\nRunning test {} time".format(i))
     g = "(*args[" + str(i) + "])"
@@ -19,10 +20,10 @@ for i in range(len(args)):
     numpy = timeit.timeit("numpy_integrate"+g, setup='from numpy_integrator import numpy_integrate; from __main__ import args', number=1)
     print("\nPure \t: {:.5f} sec".format(pure))
     print("Numpy \t: {:.5f} sec".format(numpy))    
-    if (pure/numpy) < 1:
-        result = 'slower'
-    else:
+    if (pure<numpy):
         result = 'faster'
+    else:
+        result = 'slower'
 
-    print('Numpy is {:.3f}x {}'.format(pure/numpy, result))
+    print('\nNumpy is {:.3f}x {}'.format(pure/numpy, result))
     print('-------------------------------------\n')
