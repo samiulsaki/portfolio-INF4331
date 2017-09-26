@@ -1,0 +1,61 @@
+The following test shows that swapping pure python function with Cython function 
+it did not improve made the programme faster. It might be becuase of my Cython 
+function is not properly Cythonised yet. I am looking into it. 
+
+For now programme with Cython function running much faster than Numpy function 
+but stil on average 2.5x slower than pure function.
+
+The test is held running the following file:
+$ python pure_vs_numpy_vs_cython_testing.py
+
+===============================================================================
+
+Test comparison: Pure vs Numpy vs Cython
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=1, N=1000 ]
+
+Pure    : 0.00097 sec
+Numpy   : 0.00020 sec
+Cython  : 0.00023 sec
+
+Pure funtion is the fastest
+Numpy is 4.747x slower than pure function
+Cython is 4.148x slower than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=1, b=3, N=10000 ]
+
+Pure    : 0.01253 sec
+Numpy   : 0.00030 sec
+Cython  : 0.00390 sec
+
+Pure funtion is the fastest
+Numpy is 41.797x slower than pure function
+Cython is 3.211x slower than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=3*x + 4, a=0, b=2, N=10000 ]
+
+Pure    : 0.00661 sec
+Numpy   : 0.00030 sec
+Cython  : 0.00249 sec
+
+Pure funtion is the fastest
+Numpy is 22.073x slower than pure function
+Cython is 2.655x slower than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=3, N=1000000 ]
+
+Pure    : 0.52210 sec
+Numpy   : 0.01405 sec
+Cython  : 0.24645 sec
+
+Pure funtion is the fastest
+Numpy is 37.157x slower than pure function
+Cython is 2.118x slower than pure function
+-----------------------------------------

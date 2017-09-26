@@ -4,7 +4,10 @@ from math import sin
 f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2
 
-args = [[f1, 0, 1, 1000], [f1, 0, 1, 1000000], [f2, 0, 2, 1000], [f1, 0, 3, 100000] ]
+args = [[f1, 0, 1, 1000], 
+        [f1, 1, 3, 10000], 
+        [f2, 0, 2, 10000], 
+        [f1, 0, 3, 1000000] ]
 
 print('Test comparison: Pure vs Numpy vs Numba\n')
 for i in range(len(args)):

@@ -1,0 +1,47 @@
+The following test shows that converting the pure python code to numpy did not 
+made the function faster. Using Numpy the programme got on average slower despite
+the integrals limits. The more the number of loops (N) are slower ratio are.
+
+The test is held running the following file:
+$ python pure_vs_numpy_testing.py
+
+===============================================================================
+
+
+Test comparison: Pure vs Numpy
+
+-------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=1, N=1000 ]
+
+Pure    : 0.00045 sec
+Numpy   : 0.00023 sec
+
+Numpy is 1.942x slower
+-------------------------------------
+
+-------------------------------------
+Arguments given: [ f(x)=x**2, a=1, b=3, N=10000 ]
+
+Pure    : 0.00596 sec
+Numpy   : 0.00023 sec
+
+Numpy is 26.264x slower
+-------------------------------------
+
+-------------------------------------
+Arguments given: [ f(x)=3*x + 4, a=0, b=2, N=10000 ]
+
+Pure    : 0.00486 sec
+Numpy   : 0.00017 sec
+
+Numpy is 29.048x slower
+-------------------------------------
+
+-------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=3, N=1000000 ]
+
+Pure    : 0.50160 sec
+Numpy   : 0.01394 sec
+
+Numpy is 35.978x slower
+-------------------------------------

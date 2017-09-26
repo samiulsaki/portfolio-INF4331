@@ -1,0 +1,55 @@
+The following test shows that converting the pure python code to Numba have made 
+a significant change to the function run time. The programme with Numba functions 
+perfoms much better than numpy functions and the following results shows that on 
+average it is 0.5x faster than pure function. 
+
+The test is held running the following file:
+$ python pure_vs_numpy_vs_numba_testing.py
+
+===============================================================================
+
+
+Test comparison: Pure vs Numpy vs Numba
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=1, N=1000 ]
+
+Pure    : 0.00048 sec
+Numpy   : 0.00025 sec
+Numba   : 0.30240 sec
+
+Numba is faster
+Numba is 0.002x faster than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=1, b=3, N=10000 ]
+
+Pure    : 0.00475 sec
+Numpy   : 0.00024 sec
+Numba   : 0.00606 sec
+
+Numba is faster
+Numba is 0.785x faster than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=3*x + 4, a=0, b=2, N=10000 ]
+
+Pure    : 0.00864 sec
+Numpy   : 0.00025 sec
+Numba   : 0.00563 sec
+
+Numba is faster
+Numba is 1.535x slower than pure function
+-----------------------------------------
+
+-----------------------------------------
+Arguments given: [ f(x)=x**2, a=0, b=3, N=1000000 ]
+
+Pure    : 0.48685 sec
+Numpy   : 0.01377 sec
+Numba   : 0.53214 sec
+
+Numba is faster
+Numba is 0.915x faster than pure function
