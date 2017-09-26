@@ -19,11 +19,11 @@
 	- [x] 3.4: More polynomials (2 Points)
 
 * ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (fast python): 40 + 5 Bonus points___
-	- [ ] 4.1: Writing test cases (4 Points)
-	- [ ] 4.2: Python implementation (6 Points)
-	- [ ] 4.3: numpy implementation (6 Points)
+	- [x] 4.1: Writing test cases (4 Points)
+	- [x] 4.2: Python implementation (6 Points)
+	- [x] 4.3: numpy implementation (6 Points)
 	- [ ] 4.4: numba (6 Points)
-    - [ ] 4.5: Cython (10 Points)
+    - [x] 4.5: Cython (10 Points)
     - [ ] 4.6: Compute smarter, not harder (5 Points)
     - [ ] 4.7: Making a module (3 Points)
     - [ ] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
