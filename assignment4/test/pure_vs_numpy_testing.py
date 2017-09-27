@@ -1,5 +1,5 @@
 import timeit
-from math import sin
+#from integrators import integrator
 
 f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2
@@ -19,8 +19,8 @@ for i in range(len(args)):
     else:
         arg0 = str('3*x + 4')
     print('Arguments given: [ f(x)={}, a={}, b={}, N={} ]'.format(arg0,args[i][1] , args[i][2], args[i][3]))
-    pure = timeit.timeit("integrate"+g, setup='from integrator import integrate; from __main__ import args', number=1)
-    numpy = timeit.timeit("numpy_integrate"+g, setup='from numpy_integrator import numpy_integrate; from __main__ import args', number=1)
+    pure = timeit.timeit("integrate"+g, setup='from integrators.integrator import integrate; from __main__ import args', number=1)
+    numpy = timeit.timeit("numpy_integrate"+g, setup='from integrators.numpy_integrator import numpy_integrate; from __main__ import args', number=1)
     print("\nPure \t: {:.5f} sec".format(pure))
     print("Numpy \t: {:.5f} sec".format(numpy))    
     if (pure<numpy):

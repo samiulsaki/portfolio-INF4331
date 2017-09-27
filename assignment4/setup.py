@@ -1,9 +1,11 @@
 from distutils.core import setup
 from Cython.Build import cythonize
 
+name = "integrators"
 setup(
-    name = "Integration",
-    ext_modules = cythonize("cython_integrator.pyx")
+    name = name,
+    packages = [name],
+    ext_modules = cythonize(name + "/cython_integrator.pyx")
 )
 
 
