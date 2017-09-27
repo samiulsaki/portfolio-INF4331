@@ -14,8 +14,3 @@ def numba_integrate_j(f, a, b, N):
     for i in range(N):
         sum += f( a + i*height)
     return sum * height
-
-''' N=10000
-a=0
-b=1
-print(numba_integrate_j(f,a,b,N)) '''

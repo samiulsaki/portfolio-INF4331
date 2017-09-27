@@ -1,5 +1,4 @@
 import timeit
-#from integrators import integrator
 
 f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2

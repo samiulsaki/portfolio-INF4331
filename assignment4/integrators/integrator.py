@@ -22,6 +22,7 @@ def f(x):
         sum += f(a + i*height)        
     sum *= height    
     return sum '''
+
 def integrate(f, a, b, N):
     height = (b-a)/N
     sum = 0
@@ -29,19 +30,9 @@ def integrate(f, a, b, N):
         sum += f( a + i*height)
     return sum * height
 
-
-''' N=10000
-a=0
-b=1
-print(integrate(f,a,b,N)) '''
 ''' def main_func():
     f = lambda x: x**2
     N = 500
     print(integrate(f, 0, 1, N))
  '''
 
-#main()
-''' if __name__ == '__main__':
-    import timeit
-    for i in range(4):
-        print("Naive: {:.5f} sec".format(timeit.timeit("main()", number=1))) '''
