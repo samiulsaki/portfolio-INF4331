@@ -14,4 +14,5 @@
 ### Inside the ___"test"___ directory, run the tests as:
 	
 	e.g. python test_integrator.py
-	
+
+# ---------------------------------------------------------------------	
