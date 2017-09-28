@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os, sys
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -29,12 +28,17 @@ def F(a,b):
 
 N=1000
 def integrate(f,a,b,N):
-    #if N < 2:
-    #    raise ValueError('Number of N must be greater than 2')
+    if N < 2:
+        raise ValueError('Number of N must be greater than 2')
     if a == b:
         return 0
-    n = np.linspace(0,1,N)
+    #sam = []
+    #for i in range(N+1):
+    #    sam.append(float(i+1/N)
+    #    print(float(i+1)
     
+    n = np.linspace(0,1,N)
+
     sum = 0
     def smallArea(c,d):
         return (d-c)*f((c+d)/2)
@@ -51,7 +55,6 @@ def plot_dat(f,a,b,N):
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('Numerical approximation: Rectangular')
-    #if mod == 'rectangular':    
     for i in range(1,len(n)):
         c = n[i-1]
         d = n[i]
@@ -61,14 +64,12 @@ def plot_dat(f,a,b,N):
     plt.show()
     return 0
     
-    
 # Approximate area with a given precision
-def approxGivenPrecision(f,a,b,printf=False):
+def precision(f,a,b,printf=False):
     e = 100
     p = 10                                  # Smaller the value of p, better the rectangular plot
     iterationMax = 5                        # Maximum iteration is set to 5. Change the value if you like
     iteration = 0
-    
     while True:
         area = integrate(f,a,b,N=p)
         p += 10
@@ -82,16 +83,13 @@ def approxGivenPrecision(f,a,b,printf=False):
     return area
 
 #-----------------------------Run the program----------------------------------
-
 # Initial parameters: xmin, xmax, N (used)
 
 xmin = 0
 xmax = 1
 N = 100
 
-print('Actual area:',F(xmin,xmax))
-print('Approximation:',integrate(f,xmin,xmax,N))
-#print('Approximation:',integrate(m,M,p,mod='trapezoidal',error=True,plt_data=True))
-#print('#############################################################')
-print(approxGivenPrecision(f,xmin,xmax,printf=True))
-#print(approxGivenPrecision(m,M,error=0.05,mod='trapezoidal',printf=True))
+print(integrate(f,xmin,xmax,N))
+#print('Actual area:',F(xmin,xmax))
+#print('Approximation:',integrate(f,xmin,xmax,N))
+#print(precision(f,xmin,xmax,printf=True))

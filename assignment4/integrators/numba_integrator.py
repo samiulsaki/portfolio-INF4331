@@ -1,5 +1,4 @@
-
-#from numpy import linspace, sum
+#!/usr/bin/env python3
 
 from numba import jit
 

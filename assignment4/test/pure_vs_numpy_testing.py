@@ -1,4 +1,8 @@
+#!/usr/bin/env python3
+
+import os, sys
 import timeit
+os.system("clear")
 
 f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2
@@ -6,11 +10,10 @@ f2 = lambda x: 3*x + 2
 args = [[f1, 0, 1, 1000], 
         [f1, 1, 3, 10000], 
         [f2, 0, 2, 10000], 
-        [f1, 0, 3, 1000000] ]
+        [f2, 0, 3, 1000000] ]
 
 print('Test comparison: Pure vs Numpy\n')
 for i in range(len(args)):
-    #print("\nRunning test {} time".format(i))
     g = "(*args[" + str(i) + "])"
     print('-------------------------------------')
     if args[i][0] == f1:
@@ -26,6 +29,5 @@ for i in range(len(args)):
         result = 'faster'
     else:
         result = 'slower'
-
     print('\nNumpy is {:.3f}x {}'.format(pure/numpy, result))
     print('-------------------------------------\n')

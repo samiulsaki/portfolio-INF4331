@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+
+import os, sys
 import timeit
-from math import sin
+os.system("clear")
 
 f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2
@@ -11,7 +14,6 @@ args = [[f1, 0, 1, 1000],
 
 print('Test comparison: Pure vs Numpy vs Numba\n')
 for i in range(len(args)):
-    #print("\nRunning test {} time".format(i))
     g = "(*args[" + str(i) + "])"
     print('-----------------------------------------')
     if args[i][0] == f1:
@@ -25,7 +27,6 @@ for i in range(len(args)):
     print("\nPure \t: {:.5f} sec".format(pure))
     print("Numpy \t: {:.5f} sec".format(numpy))
     print("Numba \t: {:.5f} sec".format(numba))
-
     if (numpy) < (numba):
         print('\nNumba is faster')
         if (pure < numba):

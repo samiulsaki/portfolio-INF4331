@@ -1,6 +1,11 @@
+#!/usr/bin/env python3
+
 import os, sys
-from math import exp
-#os.system("clear")
+#from math import exp
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+
 
 def f(x):
     return x**2
@@ -28,17 +33,7 @@ def f(x):
     sum = 0
     for i in range(N):
         sum += f( a + i*height)
-    return sum * height
- '''
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.patches import Polygon
-
-
-def f(x):
-    return x**2
+    return sum * height '''
 
 def integrate(f, a, b, N):
     height = float(b-a)/N
@@ -47,20 +42,18 @@ def integrate(f, a, b, N):
         sum += f( a + i*height)
     return sum * height
 
-
-
 # Numpy is only used for integral_plot() function
-
 def integral_plot():
     a, b = 0, 1  # integral limits
-    N=1000
-    height = float(b-a) / N
+    #N=10
+    #height = float(b-a) / N
     #x=0
-    for i in range(N):
-        x = (a + i*height)
-
-    #x = np.linspace(0, 1.3)
-    y = f(x) 
+    #for i in range(1,N+1):
+    #    x = (a + i * height)
+    #    y = f(x)
+    x = np.linspace(0, 1.3)
+    y = f(x)
+     
     fig, ax = plt.subplots()
     plt.plot(x, y, 'r', linewidth=2)
     plt.ylim(ymin=0)
@@ -82,6 +75,5 @@ def integral_plot():
     ax.set_xticklabels(('$a$', '$b$'))
     ax.set_yticks([])
     plt.show()
-
-integral_plot()
+#integral_plot()
 
