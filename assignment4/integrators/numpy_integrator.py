@@ -22,7 +22,6 @@ def numpy_integrate(f, a, b, N):
     return area
 
 ''' 
-
 N=100
 a=0
 b=1
