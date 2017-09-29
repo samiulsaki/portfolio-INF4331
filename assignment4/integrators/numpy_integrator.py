@@ -10,7 +10,6 @@ def f(x):
 def numpy_integrate(f, a, b, N):
     height = float(b-a) / N
     x = linspace(a, b, N)
-    #fx = f(x)
     area = sum(f(x))*height
     return area
 
