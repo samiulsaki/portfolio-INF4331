@@ -50,7 +50,7 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)    | 4.4      		  | numba integrator.py, report4.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython integrator.py, report5.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator comparison.py, report4.txt
-[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | contest.py, and report.txt
+[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
