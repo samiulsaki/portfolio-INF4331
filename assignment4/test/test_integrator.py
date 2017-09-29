@@ -15,10 +15,6 @@ def test_integral_of_constant_function():
     for N in 2000, 4000, 8000, 16000:
         computed_answer = integrate(f, 0, 1, N) # a=0, b=1
         error = abs(expected_answer - computed_answer)
-        #print(error)
-        #float_formatter = lambda x: "%.20f" % x
-        #print(float_formatter(tol))
-        #print(error<tol)
         assert error < tol
 
 def test_integral_of_linear_function():
@@ -29,11 +25,6 @@ def test_integral_of_linear_function():
     for N in 2000, 4000, 8000, 16000:
         computed_answer = integrate(f, 0, 1, N) # a=0, b=1
         error = abs(expected_answer - computed_answer)
-        #print(error)
-        #float_formatter = lambda x: "%.20f" % x
-        #print(float_formatter(tol))
-        #print(1/N)
-        #print(error < (1/N+1)) 
         assert error < (1/N+1) # N+1 simply because exact N is not always greater than error
 
 def test_numpy_integral():

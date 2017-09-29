@@ -1,0 +1,20 @@
+The following results gives a integral of equation 5 from the task 4.8.
+The computed value is ca          close to the expected value ca         
+although the expected value gives a negative value. This means the curve starts
+from -x,-y area and finished at x,y area due to sine function.
+
+Although the calculation to have the integration needs to a very large number of 
+iteration. I used 100000000.
+
+
+===============================================================================
+
+---------------------------------------
+Computed        : 0.5190985931636753
+Expected        : -0.31830988618379075
+---------------------------------------
+
+---------------------------------------
+Computed        : 0.6591549430845423
+Expected        : -0.31830988618379075
+---------------------------------------

@@ -26,7 +26,7 @@
     - [x] 4.5: Cython (10 Points)
     - [ ] 4.6: Compute smarter, not harder (5 Points)
     - [x] 4.7: Making a module (3 Points)
-    - [ ] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
+    - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -50,7 +50,7 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)    | 4.4      		  | numba integrator.py, report4.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython integrator.py, report5.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator comparison.py, report4.txt
-[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	| 4.7, 4.8 		  | contest.py, and report.txt
+[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | contest.py, and report.txt
 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
