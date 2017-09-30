@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# This python script runs the integration of the given equation 5. 
+# Since it is a sine function the script will produce a small curve 
+# which will have half section on the left side of Y axis and the other
+# half on the right side of Y axis. Please read the report.txt on the 
+# assignment 4 folder in order to understand what this script does.
+
 import os, sys
 from math import sin, pi
 from numpy import linspace
@@ -24,7 +30,7 @@ def integrate(f, a, b, N):
 #print(sin(2),sin(-2))        
 a=1E-20
 b=1E07
-N=100000000
+N=100000000000
 computed_value = integrate( f, a, b, N )
 expected_value = F(b) - F(a)
 #error = abs(computed_value) - abs(expected_value)
