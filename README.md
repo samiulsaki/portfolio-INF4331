@@ -24,7 +24,7 @@
 	- [x] 4.3: numpy implementation (6 Points)
 	- [x] 4.4: numba (6 Points)
     - [x] 4.5: Cython (10 Points)
-    - [ ] 4.6: Compute smarter, not harder (5 Points)
+    - [x] 4.6: Compute smarter, not harder (5 Points)
     - [x] 4.7: Making a module (3 Points)
     - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
 
@@ -45,11 +45,11 @@ Folder		|	Tasks	|	Files
 [*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	                        | 3.2		      | test_polynomials.py
 [*assignment3*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment3)	                        | 3.3, 3.4		  | polynomials.py
 [*assignment4/test*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/test)	                | 4.1      		  | test integrator.py, optional tests(pure_vs_numpy_testing.py, pure_vs_numpy_vs_numba_testing.py, pure_vs_numpy_vs_cython_testing.py) 
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.2      		  | integrator.py (code), quadratic error.png (plot)
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.3             | numpy integrator.py, report3.txt
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)    | 4.4      		  | numba integrator.py, report4.txt
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython integrator.py, report5.txt
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator comparison.py, report4.txt
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.2      		  | integrator.py (code), quadratic_error.png (plot)
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.3             | numpy_integrator.py, report3.txt
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)    | 4.4      		  | numba_integrator.py, report4.txt
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython_integrator.py, report5.txt
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report4.txt
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
 
 
