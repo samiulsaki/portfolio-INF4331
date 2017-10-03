@@ -99,7 +99,7 @@ def find_n(x):
     b=pi
     N = 10
     expected = F(b) - F(a)
-    til = 1e-05
+    til = 1e-10
     float_formatter = lambda x: "%.20f" % x
     
     if x == midpoint_numba_integrate:

@@ -1,21 +1,17 @@
-The following results gives a integral of equation 5 from the task 4.8.
-The computed value is ca          close to the expected value ca         
-although the expected value gives a negative value. This means the curve starts
-from -x,-y area and finished at x,y area due to sine function. The contest.py 
-script tries to find the closest computed value possible.
+The following results gives a integral of equation 5 from the task 4.8. The closest computed value 
+is ca 0.5019098593097503 which is closest to the expected value ca (-) 0.31830988618379075 although the 
+expected value gives a negative value. This is normal since the curve starts from -x,-y area and finished 
+at x,y area due to sine function. The contest.py script tries to find the closest computed value possible.
 
-Although the calculation to have the integration needs to a very large number of 
-iteration. I used 100000000.
+Although the calculation to have the integration needs to a very large number of iteration. I used 1000000000 
+or 1E09. The ideal computed value should be close to 0.31830988618379075.
 
+The script is run by the following command with the file:
+$ python contest.py
 
 ===============================================================================
 
 ---------------------------------------
-Computed        : 0.5190985931636753
-Expected        : -0.31830988618379075
----------------------------------------
-
----------------------------------------
-Computed        : 0.6591549430845423
-Expected        : -0.31830988618379075
+Computed	: 0.5019098593097503
+Expected	: -0.31830988618379075
 ---------------------------------------

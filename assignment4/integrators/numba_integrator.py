@@ -15,17 +15,3 @@ def numba_integrate_j(f, a, b, N):
     return sum * height
 
 
-''' def linear_func(x):
-    """Python function."""
-    return 2*x
-
-def call_me_maybe_numba(f, x, N):
-    """Take a Python function as argument, and maybe call f(x) N times"""
-    f_jit = numba.jit("f8(f8)", nopython=True)(f)
-    
-    @numba.jit("void(f8, i8)", nopython=True)
-    def call(x, N):
-        for _ in range(N):
-            f_jit(x)
-    
-    call(x, N) '''

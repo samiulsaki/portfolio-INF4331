@@ -1,7 +1,9 @@
-The following test shows that converting the pure python code to Numba have made 
-a significant change to the function run time. The programme with Numba functions 
-perfoms much better than numpy functions and the following results shows that on 
-average it is 0.5x faster than pure function. 
+The following test shows that converting the pure python code to Numba have not made 
+any significant change to the function run time. The programme with Numba functions 
+perfoms much better when the number of N is higher or limit intervals are lower. In 
+order to make numba faster we need to use a larger N. 
+
+In this case it is also possible that the numba function is not implemented right.
 
 The test is held running the following file:
 $ python pure_vs_numpy_vs_numba_testing.py
@@ -10,46 +12,47 @@ $ python pure_vs_numpy_vs_numba_testing.py
 
 Test comparison: Pure vs Numpy vs Numba
 
------------------------------------------
+
+-------------------------------------------------
 Arguments given: [ f(x)=x**2, a=0, b=1, N=1000 ]
 
-Pure 	: 0.00055 sec
-Numpy 	: 0.00020 sec
-Numba 	: 0.14543 sec
+Pure 	: 0.00042 sec
+Numpy 	: 0.00016 sec
+Numba 	: 0.37395 sec
 
-Numba is faster
-Numba is 0.004x faster than pure function
------------------------------------------
+Numpy function is the fastest
+Numpy function is 2.638x faster than Pure function and 2351.412x faster than Numba function
+-------------------------------------------------
 
------------------------------------------
+-------------------------------------------------
 Arguments given: [ f(x)=x**2, a=1, b=3, N=10000 ]
 
-Pure 	: 0.00517 sec
-Numpy 	: 0.00017 sec
-Numba 	: 0.00619 sec
+Pure 	: 0.00436 sec
+Numpy 	: 0.00015 sec
+Numba 	: 0.00539 sec
 
-Numba is faster
-Numba is 0.835x faster than pure function
------------------------------------------
+Numpy function is the fastest
+Numpy function is 29.897x faster than Pure function and 36.948x faster than Numba function
+-------------------------------------------------
 
------------------------------------------
+-------------------------------------------------
 Arguments given: [ f(x)=3*x + 4, a=0, b=2, N=10000 ]
 
-Pure 	: 0.00535 sec
-Numpy 	: 0.00031 sec
-Numba 	: 0.00793 sec
+Pure 	: 0.00452 sec
+Numpy 	: 0.00021 sec
+Numba 	: 0.00650 sec
 
-Numba is faster
-Numba is 0.674x faster than pure function
------------------------------------------
+Numpy function is the fastest
+Numpy function is 21.043x faster than Pure function and 30.247x faster than Numba function
+-------------------------------------------------
 
------------------------------------------
+-------------------------------------------------
 Arguments given: [ f(x)=x**2, a=0, b=3, N=1000000 ]
 
-Pure 	: 0.49372 sec
-Numpy 	: 0.01371 sec
-Numba 	: 0.58849 sec
+Pure 	: 0.45710 sec
+Numpy 	: 0.01334 sec
+Numba 	: 0.54854 sec
 
-Numba is faster
-Numba is 0.839x faster than pure function
------------------------------------------
+Numpy function is the fastest
+Numpy function is 34.259x faster than Pure function and 41.113x faster than Numba function
+-------------------------------------------------

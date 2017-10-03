@@ -1,79 +1,95 @@
 #!/usr/bin/env python3
 
+# The integrator function with pure Python. To observe the plots in better way 
+# the last three lines of this script need to be uncommented
+
 import os, sys
-#from math import exp
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.patches import Polygon
 
+#os.system("clear")
 
+plt.style.use('ggplot')
+
+# Initial function given
 def f(x):
     return x**2
 
-''' def integrate(f, a, b, N):
-    width = (float(b) - float(a)) / N
-    sum = 0
-    for i in range(N):
-        height = f(a + i*width)
-        area = height * width
-        sum += area
-        #print(sum)
-    return sum '''
+# Definite integral of the function from a to b
+def F(a,b):
+    if a > b:
+        raise ValueError('b must be greater than a')
+    elif a == b:
+        return 0
+    else:
+        return (b**3-a**3)/3
 
-''' def integrate(f, a, b, N):
-    height = float(b-a)/N
-    sum = 0.5*f(a) + 0.5*f(b)
-    for i in range(N):
-        sum += f(a + i*height)        
-    sum *= height    
-    return sum '''
-
-''' def integrate(f, a, b, N):
-    height = float(b-a)/N
-    sum = 0
-    for i in range(N):
-        sum += f( a + i*height)
-    return sum * height '''
-
-def integrate(f, a, b, N):
+# Approximating function using numerical methods:
+def integrate(f,a,b,N):
+    if N < 2:
+        raise ValueError('Number of N must be greater than 2')
+    if a == b:
+        return 0
     height = float(b-a)/N
     sum = 0
     for i in range(N):
         sum += f( a + i*height)
     return sum * height
+    
+    #n = np.linspace(0,1,N)
+    #sum = 0
+    #def smallArea(c,d):
+    #    return (d-c)*f((c+d)/2)
+    #for i in range(1,len(n)):
+    #    sum += smallArea(n[i-1],n[i])
+    #e = (sum-F(a,b))/F(a,b) *100              
+    #return sum
 
-# Numpy is only used for integral_plot() function
-def integral_plot():
-    a, b = 0, 1  # integral limits
-    #N=10
-    #height = float(b-a) / N
-    #x=0
-    #for i in range(1,N+1):
-    #    x = (a + i * height)
-    #    y = f(x)
-    x = np.linspace(0, 1.3)
-    y = f(x)
-     
-    fig, ax = plt.subplots()
-    plt.plot(x, y, 'r', linewidth=2)
-    plt.ylim(ymin=0)
+# Plotting function for a visual representation
+def plot_dat(f,a,b,N):
+    n = np.linspace(a,b,N)
+    plt.plot(n,f(n),color='red')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Numerical approximation: Rectangular')
+    for i in range(1,len(n)):
+        c = n[i-1]
+        d = n[i]
+        plt.plot([c,c],[0,f((c+d)/2)],color='blue')
+        plt.plot([d,d],[0,f(d)],color='blue')
+        plt.plot([c,d],[f((c+d)/2),f((c+d)/2)],color='blue') 
+    plt.savefig('quadratic_error.png')
+    plt.show()    
+    return 0
+    
+# Approximate area with a given precision
+def precision(f,a,b,printf=False):
+    e = 100
+    p = 10                                  # Smaller the value of p, better the rectangular plot
+    iterationMax = 3                        # Maximum iteration is set to 3 times. Change the value if you like to get narrower rectangles
+    iteration = 1    
+    while True:
+        area = integrate(f,a,b,N=p)        
+        p += 10
+        iteration += 1
+        if printf:
+            print('Approximating using rectangular rule with',p,'N and the area is',area)
+            plot_dat(f,a,b,N=p)
+        if iteration > iterationMax:
+            print('Number of iterations exceeded: '+ str(iterationMax))
+            break        
+    return area
 
-    # Make the shaded region
-    ix = np.linspace(a, b)
-    iy = f(ix)
-    verticals = [(a, 0)] + list(zip(ix, iy)) + [(b, 0)]
+#-----------------------------Run the program----------------------------------
+# Initial parameters: xmin, xmax, N (used)
 
-    poly = Polygon(verticals, facecolor='0.9', edgecolor='0.5')
-    ax.add_patch(poly)
-    plt.text(0.5 * (a + b), 30, r"$\int_a^b f(x)\mathrm{d}x$", horizontalalignment='center', fontsize=20)
-    plt.figtext(0.9, 0.05, '$x$')
-    plt.figtext(0.1, 0.9, '$y$')
-    ax.spines['right'].set_visible(False)
-    ax.spines['top'].set_visible(False)
-    ax.xaxis.set_ticks_position('bottom')
-    ax.set_xticks((a, b))
-    ax.set_xticklabels(('$a$', '$b$'))
-    ax.set_yticks([])
-    plt.show()
-#integral_plot()
+xmin = 0
+xmax = 1
+N = 100
 
+
+# Please uncomment these following three lines to observe the plots in better way
+
+#print('Actual area:',F(xmin,xmax))
+#print('Approximation:',integrate(f,xmin,xmax,N))
+#print(precision(f,xmin,xmax,printf=True))
