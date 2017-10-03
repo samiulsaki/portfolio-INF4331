@@ -3,9 +3,11 @@
 # The error and performance function shows the error difference of each midpoint function 
 # and compare the performance of the function respectively. In both cases we can see that 
 # Cython midpoint function is always the fastest to calculate. Specially in the find_n 
-# function the cython function with target 1e-10 does the calculation in split second while 
+# function the Cython function with target 1e-10 does the calculation in split second while 
 # other functions takes a considerable amount of time before find the N that gives the closest 
-# targeted result.
+# targeted result. Just running with a lower target (may be 1e-06) will show how quickly Cython 
+# function is calculating. The performance can also be noticable in performance calculation 
+# function.
 
 import os, sys
 from math import exp, sin, cos, pi
@@ -142,7 +144,7 @@ def find_n(x):
     N_cy=10
     
     expected = F(b) - F(a)
-    til = 1e-05     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
+    til = 1e-10     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
     float_formatter = lambda x: "%.20f" % x
     
     if x == midpoint_numba_integrate:
@@ -164,7 +166,7 @@ def find_n(x):
         N *=10        
     print('Value is found at N =',N,'with this: {} value'.format(Integrate))
 
-print('Midpoint Integration Comparison: Pure vs Numpy vs Numba\n')
+print('Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython\n')
 print('\n-----------------------------------------\n')
 print('Midpoint Pure Python Function:\n')
 find_n(midpoint_integrate)
@@ -175,6 +177,7 @@ print('\n-----------------------------------------\n')
 print('Midpoint Numba Function:\n')
 find_n(midpoint_numba_integrate)
 print('\n-----------------------------------------\n')
+print('Midpoint Cython Function:\n')
 find_n(midpoint_cython_integrate)
 print('\n-----------------------------------------\n')
 
