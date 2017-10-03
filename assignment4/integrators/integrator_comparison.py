@@ -7,16 +7,23 @@ from numba import jit
 import timeit
 import cython
 
+os.system('clear')
+
 def f(x):
     return sin(x)
+
+def F(x):
+    return -cos(x)
 
 # for numba
 @jit("f8(f8)", nopython=True)
 def f_j(x):
     return sin(x)
 
-def F(x):
+@jit("f8(f8)", nopython=True)
+def F_j(x):
     return -cos(x)
+
 
 def midpoint_integrate(f, a, b, N):
     height = float(b-a)/N
@@ -57,7 +64,8 @@ def error():
     a=0
     b=pi
     N=20000
-    expected = F(b) - F(a)    
+    expected = F(b) - F(a)
+    expected_j = F_j(b) - F_j(a)        # For Numba   
     Integrate = (midpoint_integrate(f,a,b,N))    
     Numpy = (midpoint_numpy_integrate(f,a,b,N))
     Numba = (midpoint_numba_integrate(f_j,a,b,N))
@@ -65,15 +73,17 @@ def error():
     print('The expected value is', expected)
     print('Computed Midpoint with Pure Python gives', Integrate,'. The difference is {:.10f}'.format(abs(Integrate - expected)))
     print('Computed Midpoint with Numpy Python gives', Numpy,'.The difference is {:.10f}'.format(abs(Numpy - expected)))
-    print('Computed Midpoint with Numba Python gives', Numba,'.The difference is {:.10f}'.format(abs(Numba - expected)))
+    print('Computed Midpoint with Numba Python gives', Numba,'.The difference is {:.10f}'.format(abs(Numba - expected_j)))
     list = ['Integrate', 'Numpy', 'Numba']
     check = [Integrate, Numpy, Numba]
     s = [i for i,x in enumerate(check) if x == max(check)]
     for i in s:        
-        print('The fastest midpoint value is with {} function'.format(list[i]))
+        print('The best midpoint error is with {} function'.format(list[i]))
 
 args = [[f, 0, 1, 1000],
         [f_j,0,1,1000]] 
+
+
 def performance():
     for i in range(len(args)):
         g1 = "(*args[" + str(0) + "])"
@@ -82,24 +92,25 @@ def performance():
         Integrate_time = timeit.timeit("midpoint_integrate"+g1, setup='from __main__ import midpoint_integrate; from __main__ import args', number=1)
         Numpy_Integrate_time = timeit.timeit("midpoint_numpy_integrate"+g2, setup='from __main__ import midpoint_numpy_integrate; from __main__ import args', number=1)
         Numba_Integrate_time = timeit.timeit("midpoint_numba_integrate"+g1, setup='from __main__ import midpoint_numba_integrate; from __main__ import args', number=1)
-        
+        print('-------------------------------------------------')
         print("\nMidpoint Integration time \t: {:.5f} sec".format(Integrate_time))
         print("Midpoint Numpy time \t\t: {:.5f} sec".format(Numpy_Integrate_time))
         print("Midpoint Numba time \t\t: {:.5f} sec".format(Numba_Integrate_time))
-        maximum = max(float(Integrate_time), float(Numpy_Integrate_time), float(Numba_Integrate_time))
-        if (maximum == Integrate_time):
-            print('\nMidpoint Pure funtion is the fastest')
-        elif (maximum == Numpy_Integrate_time):
-            print('\nMidpoint Numpy is the fastest')
+        minimum = min(float(Integrate_time), float(Numpy_Integrate_time), float(Numba_Integrate_time))
+        if (minimum == float(Integrate_time)):
+            print('\nMidpoint Pure Python funtion is the fastest')
+        elif (minimum == float(Numpy_Integrate_time)):
+            print('\nMidpoint Numpy function is the fastest')
         else:
-            print('\nMidpoint Numba is the fastest')
+            print('\nMidpoint Numba function is the fastest')
+        print('-------------------------------------------------\n')
 
 def find_n(x):
     a=0
     b=pi
     N = 10
     expected = F(b) - F(a)
-    til = 1e-10
+    til = 1e-10     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
     float_formatter = lambda x: "%.20f" % x
     
     if x == midpoint_numba_integrate:
@@ -114,16 +125,19 @@ def find_n(x):
         N *=10        
     print('Value is found at N =',N,'with this: {} value'.format(Integrate))
 
-print('-----------------------------------------')
+print('Midpoint Integration Comparison: Pure vs Numpy vs Numba\n')
+print('\n-----------------------------------------\n')
+print('Midpoint Pure Python Function:\n')
 find_n(midpoint_integrate)
-print('-----------------------------------------')
+print('\n-----------------------------------------\n')
+print('Midpoint Numpy Function:\n')
 find_n(midpoint_numpy_integrate)
-print('-----------------------------------------')
+print('\n-----------------------------------------\n')
+print('Midpoint Numba Function:\n')
 find_n(midpoint_numba_integrate)
-print('-----------------------------------------')
+print('\n-----------------------------------------\n')
 
-#print('-----------------------------------------')
+
+# Just incase you want to see more informations
 #error()
-#print('-----------------------------------------')
 #performance()
-#print('-----------------------------------------')
