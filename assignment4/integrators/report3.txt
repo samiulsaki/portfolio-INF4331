@@ -3,7 +3,7 @@ the function faster. Using Numpy the programme got on average of ca 3 times fast
 despite the integrals limits. The more the number of loops (N) are better the 
 ratios.
 
-The test is held running the following file:
+The test is held by running the following script:
 $ python pure_vs_numpy_testing.py
 
 ===============================================================================

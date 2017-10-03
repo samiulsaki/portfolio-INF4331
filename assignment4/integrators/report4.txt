@@ -5,7 +5,7 @@ order to make numba faster we need to use a larger N.
 
 In this case it is also possible that the numba function is not implemented right.
 
-The test is held running the following file:
+The test is held by running the following script:
 $ python pure_vs_numpy_vs_numba_testing.py
 
 ===============================================================================
