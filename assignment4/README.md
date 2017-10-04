@@ -1,13 +1,14 @@
 # -------------------------------------------------------------
 # Creating the Module ##
-### _Rules of Conduct_
+
+### ___These are the rules you are looking for___
 #### In order to run any files inside the ___"test"___ directory, first install the ___"integrators"___ package using the setup.py intsallation tool. 
 #### The setup.py will also compile cython_integrator.pyx before the package installation in done. 
 #### Once the installation is done, it should be okay to run the tests from the ___"test"___ directory without any further issues.
 
 # -------------------------------------------------------------
 
-* Please install the entire ___integrators___  package first with:
+* Please install the entire ___"integrators"___  package first with:
 
 ```
 	$ python setup.py install --user
