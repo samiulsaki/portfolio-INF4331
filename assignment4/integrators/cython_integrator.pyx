@@ -7,9 +7,9 @@ cdef double f(double x):
     
 cpdef cython_integrate(f, double a, double b, int N):
     cdef:
-        double height = (b - a) / N
+        double width = (b - a) / N
         double sum = 0
         ssize_t i
     for i in range(N):
-        sum += f(a + i*height)
-    return sum * height
+        sum += f(a + i*width)
+    return sum * width

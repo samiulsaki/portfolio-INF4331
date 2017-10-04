@@ -30,15 +30,11 @@ for i in range(len(args)):
     minimum = min(float(pure), float(numpy), float(cython))
     if (minimum == float(pure)):
         print('\nPure Python funtion is the fastest')
-        print('Pure function is {:.3f}x faster than Numpy function and {:.3f}x faster than Cython function'.format((numpy/pure), (cython/pure)))
-        #print('Numpy is {:.3f}x slower than pure function'.format(pure/numpy))
-        #print('Cython is {:.3f}x slower than pure function'.format(pure/cython))
+        print('Pure function is {:.3f}x faster than Numpy function and {:.3f}x faster than Cython function'.format((numpy/pure), (cython/pure)))        
     elif (minimum == float(numpy)):
         print('\nNumpy function is the fastest')
-        print('Numpy function is {:.3f}x faster than Pure function and {:.3f}x faster than Cython function'.format((pure/numpy), (cython/numpy)))
-        #print('Numpy is {:.3f}x faster than pure function'.format(pure/numpy))
+        print('Numpy function is {:.3f}x faster than Pure function and {:.3f}x faster than Cython function'.format((pure/numpy), (cython/numpy)))        
     else:
         print('\nCython function is the fastest')
-        print('Cython function is {:.3f}x faster than Pure function and {:.3f}x faster than Numpy function'.format((pure/cython), (numpy/cython)))
-        #print('Cython is {:.3f}x faster than pure function'.format(pure/cython))
+        print('Cython function is {:.3f}x faster than Pure function and {:.3f}x faster than Numpy function'.format((pure/cython), (numpy/cython)))        
     print('-------------------------------------------------\n')

@@ -4,7 +4,6 @@ import os, sys
 import timeit
 from integrators.integrator import integrate
 from integrators.numpy_integrator import numpy_integrate
-#from math import exp
 os.system("clear")
 
 def test_integral_of_constant_function():
@@ -35,10 +34,6 @@ def test_numpy_integral():
     for N in 20000, 40000, 80000, 160000, 320000:
         computed_answer = numpy_integrate(f, 0, 1, N) # a=0, b=1
         error = abs(expected_answer - computed_answer)
-        #print(error)
-        #float_formatter = lambda x: "%.20f" % x
-        #print(float_formatter(tol))
-        #print(error<tol)
         assert error < tol
 
 #test_integral_of_constant_function()

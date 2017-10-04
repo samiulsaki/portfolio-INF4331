@@ -32,9 +32,4 @@ for i in range(len(args)):
     else:
         print('\nNumpy function is the fastest')
         print('Numpy function is {:.3f}x faster than Pure function'.format(pure/numpy))
-    #if (pure<numpy):
-    #    result = 'faster'
-    #else:
-    #    result = 'slower'
-    #print('\nNumpy is {:.3f}x {}'.format(pure/numpy, result))
     print('-------------------------------------------------\n')

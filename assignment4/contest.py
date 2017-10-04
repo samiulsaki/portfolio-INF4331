@@ -9,7 +9,7 @@
 import os, sys
 from math import sin, pi
 from numpy import linspace
-#os.system("clear")
+os.system("clear")
 
 
 def f(x):
@@ -18,22 +18,22 @@ def F(x):
     return (2027025 * ( sin(x/15) * sin(x/13) * sin(x/11) * sin(x/9) * sin(x/7) * sin(x/5) * sin(x/3) * sin(x) ) ) / (pi * ( x**8 ))
 
 def integrate(f, a, b, N):
-    height = float(b-a) / N 
+    width = float(b-a) / N 
     sum = 0.1*f(a) + 0.1*f(b)
     for i in range(N):
         # Avoiding ZeroDivisionError. i.e., float division by zero or division by zero
         try:                                            
-            sum += f( float(a) + i*float(height) )        
+            sum += f( float(a) + i*float(width) )        
         except ZeroDivisionError:
             return 0
-    return sum * height
-#print(sin(2),sin(-2))        
+    return sum * width
+
 a=1E-20
 b=1E07
 N=1000000000
 computed_value = integrate( f, a, b, N )
 expected_value = F(b) - F(a)
-#error = abs(computed_value) - abs(expected_value)
+
 print('---------------------------------------')
 print('Computed\t:', computed_value,'\nExpected\t:', expected_value)
 print('---------------------------------------')

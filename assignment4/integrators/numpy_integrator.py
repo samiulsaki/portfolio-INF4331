@@ -8,8 +8,8 @@ def f(x):
     return x**2
 
 def numpy_integrate(f, a, b, N):
-    height = float(b-a) / N
+    width = float(b-a) / N
     x = linspace(a, b, N)
-    area = sum(f(x))*height
+    area = sum(f(x))*width
     return area
 

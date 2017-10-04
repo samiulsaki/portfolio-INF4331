@@ -25,18 +25,18 @@ def F(x):
     return -cos(x)
 
 def midpoint_integrate(f, a, b, N):
-    height = float(b-a)/N
+    width = float(b-a)/N
     sum = 0
     for i in range(N):
-        sum += f((a + height/2.0) + i*height)
-    sum *= height
+        sum += f((a + width/2.0) + i*width)
+    sum *= width
     return sum
 
 def midpoint_numpy_integrate(f,a,b,N):
-    height = float(b-a) /N
-    x = linspace(a+height/2, b-height/2, N-1)
+    width = float(b-a) /N
+    x = linspace(a+width/2, b-width/2, N-1)
     f2 = vectorize(f)
-    area = sum(f2(x)) * height
+    area = sum(f2(x)) * width
     return area
 
 # for numba
@@ -50,11 +50,11 @@ def F_j(x):
 
 @jit("f8(void,f8,f8,i8)")
 def midpoint_numba_integrate(f_j,a,b,N):
-    height = (b-a)/N
+    width = (b-a)/N
     sum = 0
     for i in range(N):
-        sum += f( a + height/2.0 + i*height)
-    sum *= height
+        sum += f( a + width/2.0 + i*width)
+    sum *= width
     return sum
 
 # for cython
@@ -68,14 +68,14 @@ def F_cy(x):
 
 @cython.locals(f_cy=cython.double, a_cy=cython.double, 
                 b_cy=cython.double, N_cy=cython.Py_ssize_t, 
-                height_cy=cython.double, sum_cy=cython.double, 
+                width_cy=cython.double, sum_cy=cython.double, 
                 i_cy=cython.Py_ssize_t)
 def midpoint_cython_integrate(f_cy, a_cy, b_cy, N_cy):
-    height_cy = (b_cy - a_cy) / N_cy
+    width_cy = (b_cy - a_cy) / N_cy
     sum_cy = 0    
     for i_cy in range(N_cy):
-        sum_cy += f_cy(a_cy + height_cy/2.0 + i_cy*height_cy)
-    sum_cy *= height_cy
+        sum_cy += f_cy(a_cy + width_cy/2.0 + i_cy*width_cy)
+    sum_cy *= width_cy
     return sum_cy
 
 
@@ -176,11 +176,12 @@ find_n(midpoint_numpy_integrate)
 print('\n-----------------------------------------\n')
 print('Midpoint Numba Function:\n')
 find_n(midpoint_numba_integrate)
-print('\n-----------------------------------------\n')
+print('\n-----------------------------------------\n') 
 print('Midpoint Cython Function:\n')
 find_n(midpoint_cython_integrate)
 print('\n-----------------------------------------\n')
 
 # Just in case you want to see more information
+
 #error()
 #performance()

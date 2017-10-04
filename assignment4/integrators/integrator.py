@@ -7,8 +7,6 @@ import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-#os.system("clear")
-
 plt.style.use('ggplot')
 
 # Initial function given
@@ -30,20 +28,12 @@ def integrate(f,a,b,N):
         raise ValueError('Number of N must be greater than 2')
     if a == b:
         return 0
-    height = float(b-a)/N
+    width = float(b-a)/N
     sum = 0
     for i in range(N):
-        sum += f( a + i*height)
-    return sum * height
-    
-    #n = np.linspace(0,1,N)
-    #sum = 0
-    #def smallArea(c,d):
-    #    return (d-c)*f((c+d)/2)
-    #for i in range(1,len(n)):
-    #    sum += smallArea(n[i-1],n[i])
-    #e = (sum-F(a,b))/F(a,b) *100              
-    #return sum
+        sum += f( a + i*width)
+    return sum * width
+
 
 # Plotting function for a visual representation
 def plot_dat(f,a,b,N):

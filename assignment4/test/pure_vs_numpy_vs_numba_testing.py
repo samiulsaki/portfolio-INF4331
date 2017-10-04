@@ -38,18 +38,4 @@ for i in range(len(args)):
         print('\nNumba function is the fastest')
         print('Numba function is {:.3f}x faster than Pure function and {:.3f}x faster than Numpy function'.format((pure/numba), (numpy/numba)))
     
-    #if (numpy) < (numba):
-    #    print('\nNumba is faster')
-    #    if (pure < numba):
-    #        result = 'faster'
-    #    else:
-    #        result = 'slower'
-    #    print('Numba is {:.3f}x {} than pure function'.format(pure/numba, result))
-    #else:
-    #    print('\nNumpy is faster')
-    #    if (pure < numpy):
-    #        result = 'faster'
-    #    else:
-    #        result = 'slower'
-    #    print('Numpy is {:.3f}x {} than pure function'.format(pure/numpy, result))
     print('-------------------------------------------------\n')
