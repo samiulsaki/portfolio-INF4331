@@ -8,13 +8,17 @@
 # -------------------------------------------------------------
 
 * Please install the entire ___integrators___  package first with:
-	
+
+```
 	$ python setup.py install --user
-	
+```	
 * Inside the ___"test"___ directory, run the tests as (e.g.):
-	
+```	
 	$ py.test test_integrator.py -v
-    $ python pure_vs_numpy_testing.py (optional tests)
+```
+``` 
+	$ python pure_vs_numpy_testing.py (optional tests)
+```
 
 # -------------------------------------------------------------
 
