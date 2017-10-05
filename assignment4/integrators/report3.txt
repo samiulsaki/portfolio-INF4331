@@ -1,7 +1,6 @@
 The following test shows that converting the pure python code to numpy did made 
-the function faster. Using Numpy the programme got on average of ca 3 times faster 
-despite the integrals limits. The more the number of loops (N) are better the 
-ratios.
+the function faster. Using Numpy the programme got on average of ca 20 times faster 
+despite the integrals limits. The more the number of loops (N) are better the ratios.
 
 The test is held by running the following script:
 $ python pure_vs_numpy_testing.py
@@ -14,39 +13,39 @@ Test comparison: Pure vs Numpy
 -------------------------------------------------
 Arguments given: [ f(x)=x**2, a=0, b=1, N=1000 ]
 
-Pure 	: 0.00041 sec
-Numpy 	: 0.00013 sec
+Pure 	: 0.00042 sec
+Numpy 	: 0.00019 sec
 
 Numpy function is the fastest
-Numpy function is 3.185x faster than Pure function
+Numpy function is 2.154x faster than Pure function
 -------------------------------------------------
 
 -------------------------------------------------
 Arguments given: [ f(x)=x**2, a=1, b=3, N=10000 ]
 
-Pure 	: 0.00551 sec
-Numpy 	: 0.00021 sec
+Pure 	: 0.00427 sec
+Numpy 	: 0.00017 sec
 
 Numpy function is the fastest
-Numpy function is 26.147x faster than Pure function
+Numpy function is 24.724x faster than Pure function
 -------------------------------------------------
 
 -------------------------------------------------
 Arguments given: [ f(x)=3*x + 4, a=0, b=2, N=10000 ]
 
-Pure 	: 0.00546 sec
-Numpy 	: 0.00028 sec
+Pure 	: 0.00440 sec
+Numpy 	: 0.00022 sec
 
 Numpy function is the fastest
-Numpy function is 19.438x faster than Pure function
+Numpy function is 20.220x faster than Pure function
 -------------------------------------------------
 
 -------------------------------------------------
 Arguments given: [ f(x)=3*x + 4, a=0, b=3, N=1000000 ]
 
-Pure 	: 0.51566 sec
-Numpy 	: 0.02365 sec
+Pure 	: 0.49623 sec
+Numpy 	: 0.01724 sec
 
 Numpy function is the fastest
-Numpy function is 21.800x faster than Pure function
+Numpy function is 28.791x faster than Pure function
 -------------------------------------------------

@@ -1,0 +1,116 @@
+The comparison between all 4 function using the midpoint scheme we can see that the 
+Midpoint Cython integration have always the best results. The test checks how many 
+steps or number of N it takes to get to the desired result which is 2*1e-10. Computing 
+a large scale as such takes a significant amount of time for all the functions except 
+the Cython function. Here Cython is implemented in a py file and improves the run time 
+of the Midpoint function in very high level. Here just running only the midpoint_cython_integrate 
+alone finds the number of N to compute value colser to the 2*1e-10 in split seconds when other 
+functions took hours. 
+
+The test comaparison is held by runnning the following script:
+
+$ python integrator_comparison.py
+
+Reviewer are recomended to uncomment the error and performance function in the integrator_comparison.py 
+file to observer more information about the Midpoint functions. The result of these two functions the real 
+performance of all four functions with Midpoint Integration application. Although all the function seems to 
+be performing very well comparing the previous simple integrational functions.
+
+===============================================================================
+
+
+Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython
+
+
+-----------------------------------------
+
+Midpoint Pure Python Function:
+
+0.20082484079079745976 	 10
+0.02000082249070986307 	 100
+0.00200000082246726751 	 1000
+0.00020000000082246759 	 10000
+0.00002000000000082257 	 100000
+0.00000200000000000083 	 1000000
+Value is found at N = 10000000 with this: 2.0000000000008313e-06 value
+
+-----------------------------------------
+
+Midpoint Numpy Function:
+
+0.17867198798957750761 	 10
+0.01979881042761314630 	 100
+0.00199799882128690693 	 1000
+0.00019997999882235049 	 10000
+0.00001999979999882223 	 100000
+Value is found at N = 1000000 with this: 1.9999799998822226e-05 value
+
+-----------------------------------------
+
+Midpoint Numba Function:
+
+0.20082484079079745976 	 10
+0.02000082249070986307 	 100
+0.00200000082246726751 	 1000
+0.00020000000082246759 	 10000
+0.00002000000000082257 	 100000
+0.00000200000000000083 	 1000000
+Value is found at N = 10000000 with this: 2.0000000000008313e-06 value
+
+-----------------------------------------
+
+Midpoint Cython Function:
+
+0.20082484079079745976 	 10
+0.02008248407907974389 	 100
+0.00200824840790797456 	 1000
+0.00020082484079079745 	 10000
+0.00002008248407907974 	 100000
+0.00000200824840790797 	 1000000
+Value is found at N = 10000000 with this: 2.0082484079079745e-06 value
+
+-----------------------------------------
+
+
+# Error
+
+The expected value is 2.0
+Computed Midpoint with Pure Python gives 2.0000000020561743 . The difference is 0.0000000021
+Computed Midpoint with Numpy gives 1.99989999706 .The difference is 0.0001000029
+Computed Midpoint with Numba gives 2.0000000020561743 .The difference is 0.0000000021
+Computed Midpoint with Cython gives 2.0000000020561743 .The difference is 0.0000000021
+The best midpoint error is with Integrate function
+The best midpoint error is with Numba function
+The best midpoint error is with Cython function
+-------------------------------------------------
+
+
+# Performance
+
+Midpoint Integration time 	: 0.00406991 sec
+Midpoint Numpy time 		: 0.00410326 sec
+Midpoint Numba time 		: 0.00520014 sec
+Midpoint Cython time 		: 0.00372380 sec
+
+Midpoint Cython function is the fastest
+-------------------------------------------------
+
+-------------------------------------------------
+
+Midpoint Integration time 	: 0.00526931 sec
+Midpoint Numpy time 		: 0.00514194 sec
+Midpoint Numba time 		: 0.00657473 sec
+Midpoint Cython time 		: 0.00467985 sec
+
+Midpoint Cython function is the fastest
+-------------------------------------------------
+
+-------------------------------------------------
+
+Midpoint Integration time 	: 0.00399108 sec
+Midpoint Numpy time 		: 0.00409250 sec
+Midpoint Numba time 		: 0.00511923 sec
+Midpoint Cython time 		: 0.00371410 sec
+
+Midpoint Cython function is the fastest
+-------------------------------------------------

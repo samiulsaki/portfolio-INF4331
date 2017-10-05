@@ -8,9 +8,9 @@ f1 = lambda x: x**2
 f2 = lambda x: 3*x + 2
 
 args = [[f1, 0, 1, 1000], 
-        [f1, 1, 3, 10000], 
-        [f2, 0, 2, 10000], 
-        [f1, 0, 3, 1000000] ]
+        [f1, 1, 3, 10], 
+        [f2, 0, 2, 100], 
+        [f1, 0, 3, 200] ]
 
 print('Test comparison: Pure vs Numpy vs Cython\n\n')
 for i in range(len(args)):

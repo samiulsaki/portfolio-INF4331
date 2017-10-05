@@ -105,9 +105,9 @@ def error():
     for i in s:        
         print('The best midpoint error is with {} function'.format(list[i]))
 
-args = [[f, 0, 1, 1000],
-        [f_j,0,1,1000],
-        [f_cy,0,1,1000]] 
+args = [[f, 0, 1, 10000],
+        [f_j,0,1,10000],
+        [f_cy,0,1,10000]] 
 
 
 def performance():
@@ -144,7 +144,7 @@ def find_n(x):
     N_cy=10
     
     expected = F(b) - F(a)
-    til = 1e-10     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
+    til = 1e-05     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
     float_formatter = lambda x: "%.20f" % x
     
     if x == midpoint_numba_integrate:
@@ -167,7 +167,7 @@ def find_n(x):
     print('Value is found at N =',N,'with this: {} value'.format(Integrate))
 
 print('Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython\n')
-print('\n-----------------------------------------\n')
+''' print('\n-----------------------------------------\n')
 print('Midpoint Pure Python Function:\n')
 find_n(midpoint_integrate)
 print('\n-----------------------------------------\n')
@@ -179,9 +179,9 @@ find_n(midpoint_numba_integrate)
 print('\n-----------------------------------------\n') 
 print('Midpoint Cython Function:\n')
 find_n(midpoint_cython_integrate)
-print('\n-----------------------------------------\n')
+print('\n-----------------------------------------\n') '''
 
 # Just in case you want to see more information
 
-#error()
-#performance()
+error()
+performance()
