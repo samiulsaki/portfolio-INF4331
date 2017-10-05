@@ -49,7 +49,7 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.3             | numpy_integrator.py, report3.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)    | 4.4      		  | numba_integrator.py, report4.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython_integrator.py, report5.txt
-[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report4.txt
+[*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report6.txt
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
 
 
