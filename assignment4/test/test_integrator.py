@@ -35,7 +35,3 @@ def test_numpy_integral():
         computed_answer = numpy_integrate(f, 0, 1, N) # a=0, b=1
         error = abs(expected_answer - computed_answer)
         assert error < tol
-
-#test_integral_of_constant_function()
-#test_integral_of_linear_function()
-#test_numpy_integral()
