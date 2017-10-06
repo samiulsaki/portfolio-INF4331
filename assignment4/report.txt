@@ -1,17 +1,42 @@
-The following results gives a integral of equation 5 from the task 4.8. The closest computed value 
-is ca 0.5019098593097503 which is closest to the expected value ca (-) 0.31830988618379075 although the 
-expected value gives a negative value. This is normal since the curve starts from -x,-y area and finished 
-at x,y area due to sine function. The contest.py script tries to find the closest computed value possible.
+The following results gives a integral of equation 5 from the task 4.8. I have used Cython Midpoint integration 
+since it seems to be the fastest of all other methods. 
 
-Although the calculation to have the integration needs to a very large number of iteration. I used 1000000000 
-or 1E09. The ideal computed value should be close to 0.31830988618379075.
+The closest computed value I got is ca 0.49999999999265365 with N = 1000000000, which is closest to the expected 
+value ca (-)0.31830988618379075 although the expected value gives a negative number. This is normal since the curve 
+starts from -x,-y area and finished at x,y area due to sine integral. The contest.py script tries to find the closest 
+computed value possible.
+
+Although the calculation to have the integration needs to a very large number of iteration. I used upto 1000000000 or 
+1E09. The ideal computed value should be close to the expected value. After N=100000000 the computed value seems to be 
+not getting closer to the expected values anymore.
 
 The script is run by the following command with the file:
 $ python contest.py
 
 ===============================================================================
 
+# Computed Results with different N
+
+N = 1000000
 ---------------------------------------
-Computed	: 0.5019098593097503
+Computed	: -0.24720417043968826
+Expected	: -0.31830988618379075
+---------------------------------------
+
+N = 10000000
+---------------------------------------
+Computed	: 0.49999999999264694
+Expected	: -0.31830988618379075
+---------------------------------------
+
+N = 100000000
+---------------------------------------
+Computed	: 0.499999999992645
+Expected	: -0.31830988618379075
+---------------------------------------
+
+N = 1000000000
+---------------------------------------
+Computed	: 0.49999999999265365
 Expected	: -0.31830988618379075
 ---------------------------------------

@@ -9,31 +9,38 @@
 import os, sys
 from math import sin, pi
 from numpy import linspace
+import cython
 os.system("clear")
 
-
-def f(x):
+@cython.locals(x=cython.double)
+def f_cy(x):
     return (1/pi) * (sin(x)/x) * (sin(x/3)/(x/3)) *  (sin(x/5)/(x/5)) * (sin(x/7)/(x/7)) * (sin(x/9)/(x/9)) * (sin(x/11)/(x/11)) * (sin(x/13)/(x/13)) * (sin(x/15)/(x/15))
-def F(x):
+
+@cython.locals(x=cython.double)
+def F_cy(x):
     return (2027025 * ( sin(x/15) * sin(x/13) * sin(x/11) * sin(x/9) * sin(x/7) * sin(x/5) * sin(x/3) * sin(x) ) ) / (pi * ( x**8 ))
 
-def integrate(f, a, b, N):
-    width = float(b-a) / N 
-    sum = 0.1*f(a) + 0.1*f(b)
-    for i in range(N):
-        # Avoiding ZeroDivisionError. i.e., float division by zero or division by zero
-        try:                                            
-            sum += f( float(a) + i*float(width) )        
-        except ZeroDivisionError:
-            return 0
-    return sum * width
+@cython.locals(f_cy=cython.double, a_cy=cython.double, 
+                b_cy=cython.double, N_cy=cython.Py_ssize_t, 
+                width_cy=cython.double, sum_cy=cython.double, 
+                i_cy=cython.Py_ssize_t)
+def midpoint_cython_integrate(f_cy, a_cy, b_cy, N_cy):
+    width_cy = (b_cy - a_cy) / N_cy
+    sum_cy = 0    
+    for i_cy in range(N_cy):
+        sum_cy += f_cy(a_cy + width_cy/2.0 + i_cy*width_cy)
+    sum_cy *= width_cy
+    return sum_cy
 
-a=1E-20
-b=1E07
-N=1000000000
-computed_value = integrate( f, a, b, N )
-expected_value = F(b) - F(a)
 
+a_cy=1E-20
+b_cy=1E07
+N_cy=1000000
+
+expected_cy = F_cy(b_cy) - F_cy(a_cy)
+computed_cy = (midpoint_cython_integrate(f_cy,a_cy,b_cy,N_cy))
+
+print('N =',N_cy)
 print('---------------------------------------')
-print('Computed\t:', computed_value,'\nExpected\t:', expected_value)
+print('Computed\t:', computed_cy,'\nExpected\t:', expected_cy)
 print('---------------------------------------')
