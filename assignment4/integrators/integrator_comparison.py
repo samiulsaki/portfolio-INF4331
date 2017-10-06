@@ -144,7 +144,7 @@ def find_n(x):
     N_cy=10
     
     expected = F(b) - F(a)
-    til = 1e-10     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
+    til = 1e-05     # Finding such a large number as 1e-10 takes quite a long time to get the computed values. I recommend using smaller target like 1e-06
     float_formatter = lambda x: "%.20f" % x
     
     if x == midpoint_numba_integrate:
@@ -162,8 +162,8 @@ def find_n(x):
         else:
             Integrate = x(f,a,b,N)
         Integrate = Integrate/N
-        print(float_formatter(Integrate), '\t', N)
-        N *=10        
+        #print(float_formatter(Integrate), '\t', N)
+        N +=100             # Increased the N by 100. Can be changed larger values for faster calculation
     print('Value is found at N =',N,'with this: {} value'.format(Integrate))
 
 print('Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython\n')
