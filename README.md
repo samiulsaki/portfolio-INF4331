@@ -27,6 +27,7 @@
     - [x] 4.6: Compute smarter, not harder (5 Points)
     - [x] 4.7: Making a module (3 Points)
     - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
+* ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (peer-review): 10___
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -51,7 +52,7 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython_integrator.py, report5.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report6.txt
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
-
+[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        |  		  | feedback.tex, feedback.pdf
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
