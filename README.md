@@ -18,7 +18,7 @@
 	- [x] 3.3: Polynomials (5 Points)
 	- [x] 3.4: More polynomials (2 Points)
 
-* ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (fast python): 40 + 5 Bonus points___
+* ___[Assignment 4](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/assignment_4.pdf) : (fast python): 40 + 5 Bonus Points___
 	- [x] 4.1: Writing test cases (4 Points)
 	- [x] 4.2: Python implementation (6 Points)
 	- [x] 4.3: numpy implementation (6 Points)
@@ -28,6 +28,13 @@
     - [x] 4.7: Making a module (3 Points)
     - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
 * ___[Assignment 4.5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/Peer-review%20information.txt) : (peer-review): 10___
+
+* ___[Assignment 5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment5/assignment_5.pdf) : (Regexes): 30 + 10 Bonus Points___
+    - [] 5.1: Nwodkram parser (10 points)
+    - [] 5.2: Extending nwodkram (6 points)
+    - [] 5.3: Finding emails (9 points)
+    - [] 5.4: Finding URLs (10 points)
+    - [] 5.5: Search (almost) ALL the pages (5 points)
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -52,7 +59,10 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython_integrator.py, report5.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report6.txt
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
-[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        |  		  | feedback.tex, feedback.pdf
+[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        |  		          | feedback.tex, feedback.pdf
+[*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.1, 5.2 		  | parser.py
+[*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.3, 5.4, 5,5   | scraper.py
+
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
