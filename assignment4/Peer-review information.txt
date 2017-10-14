@@ -1,0 +1,16 @@
+# General information about peer-review
+ - Assignment 4 due this Friday
+ - Followed by a one week peer-review assignment
+ - Important: You need to do the peer-review in order to get the points for assignment 4!
+
+# Peer-review process
+ - You will be put in groups of 2 or 3.
+ - You will get (read and write) access to 2 or 3 other students solution.
+ - The review assignment is to give constructive feedback for these students
+ - Write the feedback in Latex and push it to the students repository.
+ - How you organise the review process is up to you. Your group can e.g. meet in person and discuss the solutions together, or split up the work and communicate via email.
+
+You will receive an email with your group partners and a Latex template on Saturday.
+
+# Peer-review Points
+ - A review is worth up to 10 points (all students in a group get the same amount of points).
