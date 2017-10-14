@@ -27,7 +27,7 @@
     - [x] 4.6: Compute smarter, not harder (5 Points)
     - [x] 4.7: Making a module (3 Points)
     - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
-* ___[Assignment 4.5](INF3331-aschowdh/assignment4/Peer-review information.txt) : (peer-review): 10___
+* ___[Assignment 4.5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/Peer-review%20information.txt) : (peer-review): 10___
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
