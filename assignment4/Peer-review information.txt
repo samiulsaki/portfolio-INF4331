@@ -8,7 +8,8 @@
  - You will get (read and write) access to 2 or 3 other students solution.
  - The review assignment is to give constructive feedback for these students
  - Write the feedback in Latex and push it to the students repository.
- - How you organise the review process is up to you. Your group can e.g. meet in person and discuss the solutions together, or split up the work and communicate via email.
+ - How you organise the review process is up to you. Your group can e.g. meet in person and discuss the solutions together, 
+ or split up the work and communicate via email.
 
 You will receive an email with your group partners and a Latex template on Saturday.
 
