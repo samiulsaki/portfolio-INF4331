@@ -30,11 +30,11 @@
 * ___[Assignment 4.5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/Peer-review%20information.txt) : (peer-review): 10___
 
 * ___[Assignment 5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment5/assignment_5.pdf) : (Regexes): 30 + 10 Bonus Points___
-    - [] 5.1: Nwodkram parser (10 points)
-    - [] 5.2: Extending nwodkram (6 points)
-    - [] 5.3: Finding emails (9 points)
-    - [] 5.4: Finding URLs (10 points)
-    - [] 5.5: Search (almost) ALL the pages (5 points)
+    - [ ] 5.1: Nwodkram parser (10 points)
+    - [ ] 5.2: Extending nwodkram (6 points)
+    - [ ] 5.3: Finding emails (9 points)
+    - [ ] 5.4: Finding URLs (10 points)
+    - [ ] 5.5: Search (almost) ALL the pages (5 points)
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
