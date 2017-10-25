@@ -75,10 +75,12 @@ def parse_nwodkram(text):
                         bold = re.sub(original, convert , j)
                         temp_list.append(bold)
                     
-                    #elif re.search(r"(\[)((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\])\(([\w\D\d].*)\)",j):
-                    #elif re.search(r"(\[)((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?|\+-=\\\.&\d]).*(\])\(([\w\D\d].*)\)",j):
-                    
-                    
+                    elif re.search(r"(\\)(\*|\%)",j):
+                        #print(j)
+                        regex = '\\'
+                        backslash = re.sub(r'\\', '', j)
+                        #print(backslash)
+                        temp_list.append(backslash)
 
                     else:
                         temp_list.append(j)
@@ -92,15 +94,15 @@ def parse_nwodkram(text):
 
 if __name__ == "__main__":
     sample_string = r"""    
-    Tresultis is some Nwodkram text. Note tresultat *tresultis* is in italic, and %tresultis% is in bold.
-    If you want to write an \* or an equal sign and not resultave tresulte parser eat tresultem, 
-    tresultat's easy -  note tresultat \* tresultis \* is not in italic even tresultougresult it's between two \*s,
-    and \% tresultis \% is not in bold.
+    This is some Nwodkram text. Note that *this* is in italic, and %this% is in bold.
+    If you want to write an \* or an equal sign and not have the parser eat them, 
+    that's easy -  note that \* this \* is not in italic even though it's between two \*s,
+    and \% this \% is not in bold.
 
     >> This is a Quoteline
-    >> This is in *italic* and in blockquote, but blockquote trumps the italic
+    >> This is in *italic* and in blockquote, but blockquote excape the italic marks
 
-    [www.google.com](here) is a hyperlink.    
+    [www.google.com](here) is a hyperlink.
     [http://www.google.com](here) is another.
     [https://www.weird?$|site.weird/path/](and here) is a third with some weird characters.
     Follow it at your own peril.
@@ -113,22 +115,22 @@ if __name__ == "__main__":
     <https://www.python.org/static/community_logos/python-logo-master-v3-TM.png>(w=600, h=200)
 
     This is a wikipedia query:
-    [wp:matrix]
-    
+    [wp:matrix]    
 
     """
-    expected_string = r"""
-    Tresultis is some Nwodkram text. Note tresultat <i>tresultis</i> is in italic, and <b>tresultis</b> is in bold.
-    If you want to write an * or an equal sign and not resultave tresulte parser eat tresultem, 
-    tresultat's easy -  note tresultat * tresultis * is not in italic even tresultougresult it's between two *s,
-    and % tresultis % is not in bold.
-        
-        <blockquote> This is a Quoteline </blockquote>
-        <blockquote> This is in *italic* and in blockquote, but blockquote trumps the italic </blockquote>
 
-    <a href='http://www.google.com'>here</a> is a hyperlink.
-    <a href='http://www.google.com'>here</a> is another.
-    <a href='https://www.weird?$|site.weird/path/'>and here</a> is a third with some weird characters.
+    expected_string = r"""    
+    This is some Nwodkram text. Note that <i>this</i> is in italic, and <b>this</b> is in bold.
+    If you want to write an * or an equal sign and not have the parser eat them,
+    that's easy - note that * this * is not in italic even though it's between two *s,
+    and % this % is not in bold.
+
+        <blockquote> This is a Quoteline </blockquote>
+        <blockquote> This is in *italic* and in blockquote, but blockquote excape the italic marks </blockquote>
+
+    <a href="http://www.google.com>here</a>
+    <a href="http://www.google.com>here</a>
+    <a href="https://www.weird?$|site.weird/path/>and here</a>
     Follow it at your own peril.
 
     Ideally, it would be good if your hyperlinks can contain parentheses and underscores.
@@ -138,17 +140,12 @@ if __name__ == "__main__":
     This is an image:
     <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" style="width:600px;height:200px;">
 
-    """
-
-    sample_string_block = r"""
-    >> this is a block quote
-    >> *tresultis* is in italic
-
     This is a wikipedia query:
-    https://en.wikipedia.org/wiki/matrix
+    <a href="https://en.wikipedia.org/w/index.php?title=Special:Search&search=matrix>matrix</a>
+
 
     """
-
+    # Main Program
     #print("Executing as main program")
     #print("Value of __name__ is: ", __name__)
     print(parse_nwodkram(sample_string))
