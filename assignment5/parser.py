@@ -15,10 +15,7 @@
 # Diclaimer:
 # I haven't created any test file. Users can easily insert their string as input.
 
-
-
 import os,sys,re
-
 
 out=[]
 output=[]

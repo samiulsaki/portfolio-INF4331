@@ -17,18 +17,25 @@
 # just stick with upto depth level 3 (or less).
 # I haven't created any test file. Users can easily insert their string as input.
 
-
 import os,sys,re,time
 import urllib.request
 
+def url_read(url):
+        if url.endswith('/'):
+            pass
+        elif not url.endswith('.html'):
+            url = url+'/'
+        url_req = urllib.request.urlopen(url)
+        url_read = url_req.read()
+        string = url_read.decode("utf8")
+        url_req.close()
+        return string
 
 def find_emails(text):
     emails = []
     for i in re.findall(r'[\w\.\+\-!#\$%&*/=\?\^_{|}~]+\@[a-z]+[\w\.\+\-!#\$%&*/=\?\^_{|}~]*\.[a-z]{2,3}',text):
         emails.append(i)
     return emails    
-
-
 
 def find_urls(text):
     urls = []
@@ -41,8 +48,6 @@ def find_urls(text):
             urls.append(st2)
     return urls
 
-
-#all_urls = []
 def all_the_emails(url,depth):
     all=[]
     def urls_emails(url):
@@ -63,7 +68,6 @@ def all_the_emails(url,depth):
                 j = find_emails(url_read(i))
                 if j!= []:
                     print('And these are the emails found from the above URL: \n\n',set(j))
-                
             except Exception:
                 pass
         if (depth > 1):
@@ -78,7 +82,6 @@ def all_the_emails(url,depth):
             all=[]
         else:
             pass
-            
 
 if __name__ == "__main__":
     sample_string_email = r"""
@@ -149,18 +152,6 @@ if __name__ == "__main__":
     
     """
     
-    def url_read(url):
-        if url.endswith('/'):
-            pass
-        elif not url.endswith('.html'):
-            url = url+'/'
-        url_req = urllib.request.urlopen(url)
-        url_read = url_req.read()
-        string = url_read.decode("utf8")
-        url_req.close()
-        return string
-    
-    
     # Main Program
     os.system('clear')
     usr_input = input('''Enter your choice for URL/Email Scraping: \n
@@ -172,7 +163,6 @@ if __name__ == "__main__":
     You can Press \'0\' to exit this program \n:''')
     while (usr_input != '1') and (usr_input != '2') and (usr_input != '3') and (usr_input != '4') and (usr_input != '0') and (usr_input != '5'):
         usr_input = input("Try again. Press only '1'/'2'/'3'/'4'/'5'/'0' : ")
-
     if usr_input == '1':
         usr_input = input('Enter your own url or leave it blank for default : ')
         if usr_input is not "":
