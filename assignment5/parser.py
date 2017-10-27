@@ -19,7 +19,7 @@ def parse_nwodkram(text):
             blockquote = re.sub(regex, convert, line ) + " </blockquote>"
             temp_list.append(blockquote)
 
-        elif re.search(r"(\[)((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\])\(([\w\D\d].*)\)",line):
+        elif re.search(r"\[([\w\D\d].*)\](\()((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\))",line):
             #print(line)
             fr_link = line.find(r'[') + 1
             to_link = line.find(r']', fr_link)
@@ -102,9 +102,9 @@ if __name__ == "__main__":
     >> This is a Quoteline
     >> This is in *italic* and in blockquote, but blockquote excape the italic marks
 
-    [www.google.com](here) is a hyperlink.
-    [http://www.google.com](here) is another.
-    [https://www.weird?$|site.weird/path/](and here) is a third with some weird characters.
+    [here](www.google.com) is a hyperlink.
+    [here](http://www.google.com) is another.
+    [and here](https://www.weird?$|site.weird/path/) is a third with some weird characters.
     Follow it at your own peril.
 
     Ideally, it would be good if your hyperlinks can contain parentheses and underscores.
