@@ -1,4 +1,21 @@
-#!/usr/bin/env pytresulton3
+#!/usr/bin/env python3
+
+# The parser.py script runs and finds all the mathces in markdown text using regexes.
+# The scripts does the following conversions (from markdown to html):
+# Markdown Text                                  |           HTML Text
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------
+# Italic = '*text*'                              |           <i>text</i>
+# Bold = '%text%'                                |           <b>text</b>
+# '\%' or '\*'                                   |           % or *
+# Blockquote = '>> text'                         |           <blockquote> text </blockquote> 
+# Hyperlink = '[text](url)'                      |           <a href='url'>text</a> (url with www gets http://)
+# ImageURL = '<imageURL>(w=WIDTH, h=HEIGHT)'     |           <img src="imageURL" style="width:WIDTHpx;height:HEIGHTpx;">
+# WikipediaQuery = '[wp:QUERY]'                  |           <a href="https://en.wikipedia.org/w/index.php?title=Special:Search&search=query>QUERY</a>
+# 
+# Diclaimer:
+# I haven't created any test file. Users can easily insert their string as input.
+
+
 
 import os,sys,re
 
@@ -21,16 +38,16 @@ def parse_nwodkram(text):
 
         elif re.search(r"\[([\w\D\d].*)\](\()((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\))",line):
             #print(line)
-            fr_link = line.find(r'[') + 1
-            to_link = line.find(r']', fr_link)
-            fr_name = line.find(r'(') + 1
-            to_name = line.find(r')', fr_name)
+            fr_link = line.find(r'(') + 1
+            to_link = line.find(r')', fr_link)
+            fr_name = line.find(r'[') + 1
+            to_name = line.find(r']', fr_name)
             link = line[fr_link:to_link]
             link_name = line[fr_name:to_name]
             if re.search(r'^www', link):
-                hyperlink = '<a href="http://'+link+">"+link_name+"</a>"
+                hyperlink = "<a href=\'http://"+link+"\'>"+link_name+"</a>"
             else:
-                hyperlink = '<a href="'+link+">"+link_name+"</a>"
+                hyperlink = "<a href=\'"+link+"\'>"+link_name+"</a>"
             temp_list.append(hyperlink)
 
         elif re.search(r"\<(https?):((//)|(\\\\))+.*\>",line):
@@ -94,62 +111,40 @@ def parse_nwodkram(text):
 
 if __name__ == "__main__":
     sample_string = r"""    
-    This is some Nwodkram text. Note that *this* is in italic, and %this% is in bold.
-    If you want to write an \* or an equal sign and not have the parser eat them, 
-    that's easy -  note that \* this \* is not in italic even though it's between two \*s,
-    and \% this \% is not in bold.
+This is some Nwodkram text. Note that *this* is in italic, and %this% is in bold.
+If you want to write an \* or an equal sign and not have the parser eat them, 
+that's easy -  note that \* this \* is not in italic even though it's between two \*s,
+and \% this \% is not in bold.
 
-    >> This is a Quoteline
-    >> This is in *italic* and in blockquote, but blockquote excape the italic marks
+>> This is a Quoteline
+>> This is in *italic* and in blockquote, but blockquote excape the italic marks
 
-    [here](www.google.com) is a hyperlink.
-    [here](http://www.google.com) is another.
-    [and here](https://www.weird?$|site.weird/path/) is a third with some weird characters.
-    Follow it at your own peril.
+[here](www.google.com) is a hyperlink.
+[here](http://www.google.com) is another.
+[and here](https://www.weird?$|site.weird/path/) is a third with some weird characters.
+Follow it at your own peril.
 
-    Ideally, it would be good if your hyperlinks can contain parentheses and underscores.
-    But don't worry too much if some weird combination is ambiguous or results in
-    weird stuff.
-    
-    This is an image:
-    <https://www.python.org/static/community_logos/python-logo-master-v3-TM.png>(w=600, h=200)
+Ideally, it would be good if your hyperlinks can contain parentheses and underscores.
+But don't worry too much if some weird combination is ambiguous or results in
+weird stuff.
 
-    This is a wikipedia query:
-    [wp:matrix]    
+This is an image:
+<https://www.python.org/static/community_logos/python-logo-master-v3-TM.png>(w=600, h=200)
 
-    """
-
-    expected_string = r"""    
-    This is some Nwodkram text. Note that <i>this</i> is in italic, and <b>this</b> is in bold.
-    If you want to write an * or an equal sign and not have the parser eat them,
-    that's easy - note that * this * is not in italic even though it's between two *s,
-    and % this % is not in bold.
-
-        <blockquote> This is a Quoteline </blockquote>
-        <blockquote> This is in *italic* and in blockquote, but blockquote excape the italic marks </blockquote>
-
-    <a href="http://www.google.com>here</a>
-    <a href="http://www.google.com>here</a>
-    <a href="https://www.weird?$|site.weird/path/>and here</a>
-    Follow it at your own peril.
-
-    Ideally, it would be good if your hyperlinks can contain parentheses and underscores.
-    But don't worry too much if some weird combination is ambiguous or results in
-    weird stuff.
-
-    This is an image:
-    <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" style="width:600px;height:200px;">
-
-    This is a wikipedia query:
-    <a href="https://en.wikipedia.org/w/index.php?title=Special:Search&search=matrix>matrix</a>
-
+This is a wikipedia query:
+[wp:matrix]    
 
     """
+
     # Main Program
-    #print("Executing as main program")
-    #print("Value of __name__ is: ", __name__)
-    print(parse_nwodkram(sample_string))
-
-
-
-
+    os.system('clear')
+    print('Main Program Started')
+    print('--------------------\n')
+    usr_input = input('Enter your own string (just paste single lines) or leave it blank for default : ')
+    if usr_input is not "":
+        sample_string = usr_input
+        print(sample_string)
+        print('\nThese are the scraped emails from the String (user input) : \n',parse_nwodkram(sample_string))
+    else:
+        print(sample_string)
+        print('\nThese are the scraped emails from the String (default) : \n',parse_nwodkram(sample_string))

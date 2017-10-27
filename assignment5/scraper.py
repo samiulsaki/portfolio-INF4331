@@ -1,4 +1,22 @@
-#!/usr/bin/env pytresulton3
+#!/usr/bin/env python3
+
+# The scraper.py script is designed to scrap all the URLs and Emails from a given URL or a string.
+# The script is pretty self explanatory. Just run the script and follow the instructions.
+# 
+# The following options does as follows:
+#   Option 1 for Email Scraping in URL 
+#   Option 2 for Email Scraping in Sample String
+#   Option 3 for URL Scraping in URL
+#   Option 4 for URL Scraping in Sample String
+#   Option 5 for Email Scraping in depth level of URL
+#   Option 0 to exit this program
+#
+# Disclaimer:
+# The program might be not too sophisticated. But I tried my best to make it as good as I can. 
+# If you like to find all the emails in deeper level URLs (option 5) I suggest you do that in a cloud server or
+# just stick with upto depth level 3 (or less).
+# I haven't created any test file. Users can easily insert their string as input.
+
 
 import os,sys,re,time
 import urllib.request
@@ -145,15 +163,12 @@ if __name__ == "__main__":
     
     # Main Program
     os.system('clear')
-    """
-    The find_emails() fnction has two choices. Press 1 for URL and 2 for String
-    """
     usr_input = input('''Enter your choice for URL/Email Scraping: \n
     Press \'1\' for Email Scraping in URL \n
     Press \'2\' for Email Scraping in Sample String \n
     Press \'3\' for URL Scraping in URL \n
     Press \'4\' for URL Scraping in Sample String \n
-    Press \'5\' for Email Scraping in depth in URL \n
+    Press \'5\' for Email Scraping in depth level of URL \n
     You can Press \'0\' to exit this program \n:''')
     while (usr_input != '1') and (usr_input != '2') and (usr_input != '3') and (usr_input != '4') and (usr_input != '0') and (usr_input != '5'):
         usr_input = input("Try again. Press only '1'/'2'/'3'/'4'/'5'/'0' : ")
@@ -169,7 +184,7 @@ if __name__ == "__main__":
             str = url_read(url)
             print('\nThese are the scraped emails from the URL (default) : ',url,'\n\n',find_emails(str)) 
     elif usr_input == '2':
-        usr_input = input('Enter your own string (just paste it) or leave it blank for default : ')
+        usr_input = input('Enter your own string (just paste single lines) or leave it blank for default : ')
         if usr_input is not "":
             sample_string = usr_input
             print('\nThese are the scraped emails from the String (user input) : \n\n',find_emails(sample_string))
@@ -186,7 +201,7 @@ if __name__ == "__main__":
             str = url_read(url)
             print('\nThese are the scraped URLs from the URL (default): ',url,'\n\n',find_urls(str))
     elif usr_input == '4':
-        usr_input = input('Enter your own String (just paste it) or leave it blank for default : ')
+        usr_input = input('Enter your own String (just paste single lines) or leave it blank for default : ')
         if usr_input is not "":
             sample_string = usr_input
             print('\nThese are the scraped URLs from the sample String (user input): \n\n',find_urls(sample_string))
