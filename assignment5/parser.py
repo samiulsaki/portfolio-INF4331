@@ -42,9 +42,9 @@ def parse_nwodkram(text):
             link = line[fr_link:to_link]
             link_name = line[fr_name:to_name]
             if re.search(r'^www', link):
-                hyperlink = "<a href=\'http://"+link+"\'>"+link_name+"</a>"
+                hyperlink = "<a href=\"http://"+link+"\">"+link_name+"</a>"
             else:
-                hyperlink = "<a href=\'"+link+"\'>"+link_name+"</a>"
+                hyperlink = "<a href=\""+link+"\">"+link_name+"</a>"
             temp_list.append(hyperlink)
 
         elif re.search(r"\<(https?):((//)|(\\\\))+.*\>",line):
@@ -137,10 +137,9 @@ This is a wikipedia query:
     os.system('clear')
     print('Main Program Started')
     print('--------------------\n')
-    usr_input = input('Enter your own string (just paste single lines) or leave it blank for default : ')
+    usr_input = input('Enter your own string (just paste single lines) or leave it blank for default : \n')
     if usr_input is not "":
         sample_string = usr_input
-        print(sample_string)
         print('\nThese are the scraped emails from the String (user input) : \n',parse_nwodkram(sample_string))
     else:
         print(sample_string)

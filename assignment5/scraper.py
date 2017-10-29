@@ -179,6 +179,7 @@ if __name__ == "__main__":
             sample_string = usr_input
             print('\nThese are the scraped emails from the String (user input) : \n\n',find_emails(sample_string))
         else:
+            print(sample_string_email)
             print('\nThese are the scraped emails from the String (default) : \n\n',find_emails(sample_string_email)) 
     elif usr_input == '3':
         usr_input = input('Enter your own URL or leave it blank for default : ')
@@ -196,6 +197,7 @@ if __name__ == "__main__":
             sample_string = usr_input
             print('\nThese are the scraped URLs from the sample String (user input): \n\n',find_urls(sample_string))
         else:
+            print(sample_string_url)
             print('\nThese are the scraped URLs from the sample String (default): \n\n',find_urls(sample_string_url))
     elif usr_input == '5':
         usr_input = input('Enter your own URL or leave it blank for default : ')        
