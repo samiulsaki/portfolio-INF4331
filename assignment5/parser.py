@@ -67,8 +67,7 @@ def parse_nwodkram(text):
             wp_query = '<a href="https://en.wikipedia.org/w/index.php?title=Special:Search&search='+link_query+">"+link_query+"</a>"
             temp_list.append(wp_query)
         
-        for i in out[-1:]:
-            
+        for i in out[-1:]:            
             if (i is not "") and ('>>' not in i) and ('http' not in i) and ('www' not in i) and ('wp:' not in i):                
                 for j in i.split():
                     if re.search(r"\*(.*)\*",j):
@@ -140,7 +139,7 @@ This is a wikipedia query:
     usr_input = input('Enter your own string (just paste single lines) or leave it blank for default : \n')
     if usr_input is not "":
         sample_string = usr_input
-        print('\nThese are the scraped emails from the String (user input) : \n',parse_nwodkram(sample_string))
+        print('\nThese are the markdown to html conversion from the String (user input) : \n',parse_nwodkram(sample_string))
     else:
         print(sample_string)
-        print('\nThese are the scraped emails from the String (default) : \n',parse_nwodkram(sample_string))
+        print('\nThese are the markdown to html conversion from the String (default) : \n',parse_nwodkram(sample_string))
