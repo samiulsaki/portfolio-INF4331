@@ -45,6 +45,10 @@ def find_urls(text):
     for j in re.findall(r'<a href=(\"?\'?)(\w.*).*(\.html)(\1)>', text):
         st2 = ''.join(j)
         if st2 not in urls:
+            if re.search(r'http',st2):
+                st2 = st2.strip('"')
+            else:
+                st2 = url+'/'+st2.strip('"')
             urls.append(st2)
     return urls
 
