@@ -59,7 +59,7 @@ Folder		|	Tasks	|	Files
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.5      		  | cython_integrator.py, report5.txt
 [*assignment4/integrators*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4/integrators)	| 4.6      		  | integrator_comparison.py, report6.txt
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | 4.7, 4.8 		  | setup.py, contest.py, report.txt
-[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        |  		          | feedback.tex, feedback.pdf
+[*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | Review          | feedback.tex, feedback.pdf
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.1, 5.2 		  | parser.py
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.3, 5.4, 5,5   | scraper.py
 
