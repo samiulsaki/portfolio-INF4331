@@ -23,18 +23,14 @@ output=[]
 def parse_nwodkram(text):
     for line in text.splitlines():
         temp_list=[]
-        #block_list =[]    
         out.append(line)    
         if re.search('\>>',line):
             regex = r'\>>'
-            #print(line)
-            #original = len(re.findall(regex,line)) + 1
             convert = "<blockquote>" 
             blockquote = re.sub(regex, convert, line ) + " </blockquote>"
             temp_list.append(blockquote)
 
         elif re.search(r"\[([\w\D\d].*)\](\()((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\))",line):
-            #print(line)
             fr_link = line.find(r'(') + 1
             to_link = line.find(r')', fr_link)
             fr_name = line.find(r'[') + 1
@@ -89,12 +85,9 @@ def parse_nwodkram(text):
                         temp_list.append(bold)
                     
                     elif re.search(r"(\\)(\*|\%)",j):
-                        #print(j)
                         regex = '\\'
                         backslash = re.sub(r'\\', '', j)
-                        #print(backslash)
                         temp_list.append(backslash)
-
                     else:
                         temp_list.append(j)
                         

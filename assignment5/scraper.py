@@ -40,16 +40,20 @@ def find_emails(text):
 def find_urls(text):
     urls = []
     for i in re.findall(r'<a href=(\"?\'?)(http://|https://)([^\"\'>]*)(\1)>',text):
-        st1 = ''.join(i)
-        urls.append(st1)
+        hyperlink = ''.join(i)
+        urls.append(hyperlink.strip('"'))
     for j in re.findall(r'<a href=(\"?\'?)(\w.*).*(\.html)(\1)>', text):
-        st2 = ''.join(j)
-        if st2 not in urls:
-            if re.search(r'http',st2):
-                st2 = st2.strip('"')
+        relative_hyperlink = ''.join(j)
+        if relative_hyperlink not in urls:
+            if re.search(r'http',relative_hyperlink):
+                relative_hyperlink = relative_hyperlink.strip('"')
             else:
-                st2 = url+'/'+st2.strip('"')
-            urls.append(st2)
+                if url.endswith('/'):
+                    relative_hyperlink = url+relative_hyperlink.strip('"')
+                else:
+                    new_url = re.sub(r'\b(/\w.*\.html)','',url)
+                    relative_hyperlink = new_url+'/'+relative_hyperlink.strip('"')
+            urls.append(relative_hyperlink)
     return urls
 
 def all_the_emails(url,depth):
@@ -58,10 +62,6 @@ def all_the_emails(url,depth):
         string = url_read(url)        
         for i in find_urls(string):
             if i not in all:                       
-                if re.search(r'http',i):
-                    i = i.strip('"')
-                else:
-                    i = url+'/'+str(i).strip('"')
                 all.append(i)
     
     for i in range(0,depth):
