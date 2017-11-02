@@ -23,13 +23,14 @@ output=[]
 def parse_nwodkram(text):
     for line in text.splitlines():
         temp_list=[]
-        out.append(line)    
+        out.append(line)
+        # Converting quotelines
         if re.search('\>>',line):
             regex = r'\>>'
             convert = "<blockquote>" 
             blockquote = re.sub(regex, convert, line ) + " </blockquote>"
             temp_list.append(blockquote)
-
+        # Converting hyperlinks
         elif re.search(r"\[([\w\D\d].*)\](\()((w{3}\.)|(http://)|(https://))([a-z\w\d:#@%/;$()~_?\+-=\\\.&\d])*?(.*)(\))",line):
             fr_link = line.find(r'(') + 1
             to_link = line.find(r')', fr_link)
@@ -42,7 +43,7 @@ def parse_nwodkram(text):
             else:
                 hyperlink = "<a href=\""+link+"\">"+link_name+"</a>"
             temp_list.append(hyperlink)
-
+        # Converting imageURLs
         elif re.search(r"\<(https?):((//)|(\\\\))+.*\>",line):
             fr_link = line.find(r'<') + 1
             to_link = line.find(r'>', fr_link)
@@ -55,7 +56,7 @@ def parse_nwodkram(text):
             link_height = line[fr_height:to_height]
             imageURL = '<img src="'+link+'" style="width:'+link_width+'px;height:'+link_height+'px;">'
             temp_list.append(imageURL)
-
+        # Converting wikipedia query
         elif re.search(r'\[wp:', line):
             fr_query = line.find(r'wp:') + 3
             to_query = line.find(r']', fr_query)
@@ -66,6 +67,7 @@ def parse_nwodkram(text):
         for i in out[-1:]:            
             if (i is not "") and ('>>' not in i) and ('http' not in i) and ('www' not in i) and ('wp:' not in i):                
                 for j in i.split():
+                    # Converting italics
                     if re.search(r"\*(.*)\*",j):
                         regex = '*'
                         fr = j.find(regex) + 1
@@ -74,7 +76,7 @@ def parse_nwodkram(text):
                         convert = "<i>"+ j[fr:to] + "</i>"
                         italic = re.sub(original, convert , j)
                         temp_list.append(italic)
-                                            
+                    # Converting bolds 
                     elif re.search(r"\%(.*)\%",j):
                         regex = '%'
                         fr = j.find(regex) + 1
@@ -83,7 +85,7 @@ def parse_nwodkram(text):
                         convert = "<b>"+ j[fr:to] + "</b>"
                         bold = re.sub(original, convert , j)
                         temp_list.append(bold)
-                    
+                    # Converting backslashes
                     elif re.search(r"(\\)(\*|\%)",j):
                         regex = '\\'
                         backslash = re.sub(r'\\', '', j)

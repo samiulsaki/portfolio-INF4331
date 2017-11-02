@@ -34,14 +34,18 @@ def url_read(url):
 def find_emails(text):
     emails = []
     for i in re.findall(r'[\w\.\+\-!#\$%&*/=\?\^_{|}~]+\@[a-z]+[\w\.\+\-!#\$%&*/=\?\^_{|}~]*\.[a-z]{2,3}',text):
-        emails.append(i)
-    return emails    
+        if i not in emails:
+            emails.append(i)
+    return emails
 
 def find_urls(text):
     urls = []
+    # Finding all the urls with http/https in it
     for i in re.findall(r'<a href=(\"?\'?)(http://|https://)([^\"\'>]*)(\1)>',text):
         hyperlink = ''.join(i)
         urls.append(hyperlink.strip('"'))
+    
+    # Finding the relative hyperlinks and converting them to clickable links
     for j in re.findall(r'<a href=(\"?\'?)(\w.*).*(\.html)(\1)>', text):
         relative_hyperlink = ''.join(j)
         if relative_hyperlink not in urls:
@@ -51,10 +55,11 @@ def find_urls(text):
                 if url.endswith('/'):
                     relative_hyperlink = url+relative_hyperlink.strip('"')
                 else:
+                    # Removing .html pages from given urls (if any) before adding the relative links
                     new_url = re.sub(r'\b(/\w.*\.html)','',url)
                     relative_hyperlink = new_url+'/'+relative_hyperlink.strip('"')
             urls.append(relative_hyperlink)
-    return urls
+    return set(urls)
 
 def all_the_emails(url,depth):
     all=[]
@@ -74,12 +79,15 @@ def all_the_emails(url,depth):
                     print('And these are the emails found from the above URL: \n\n',set(j))
             except Exception:
                 pass
+        
+        # Will run this part of the code only if the depth level is more than 1
         if (depth > 1):
             depth = depth - 1
             for i in all:
                 print('\nThe URL that getting searched now:',i,'........\n')
                 time.sleep(4)
                 try:
+                    # Recursively calling the all_the_emails function
                     all_the_emails(i,1)
                 except Exception:
                     pass
@@ -204,15 +212,16 @@ if __name__ == "__main__":
             print(sample_string_url)
             print('\nThese are the scraped URLs from the sample String (default): \n\n',find_urls(sample_string_url))
     elif usr_input == '5':
-        usr_input = input('Enter your own URL or leave it blank for default : ')        
+        usr_input = input('Enter your own URL or leave it blank for default : ')
+        depth = int(input('Set your depth level (in integer). Default is 1 : ') or '1')
         if usr_input is not "":
             url = usr_input
-            depth = int(input('Set your depth level (in integer): '))
+            #depth = int(input('Set your depth level (in integer): '))
             print('\nThese are the scraped emails from the URL (user input) : ',url,'with depth level : ',depth,'\n\n')
             all_the_emails(url,depth)
         else:
             url = 'http://lucidtech.io'
-            depth = int(input('Set your depth level (in integer): '))
+            #depth = int(input('Set your depth level (in integer): '))
             print('\nThese are the scraped emails from the URL (default) : ',url,'with depth level : ',depth,'\n\n')
             all_the_emails(url,depth) 
     elif usr_input == '0':
