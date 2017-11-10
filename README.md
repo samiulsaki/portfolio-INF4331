@@ -36,6 +36,14 @@
     - [x] 5.4: Finding URLs (10 points)
     - [x] 5.5: Search (almost) ALL the pages (5 points)
 
+* ___[Assignment 6](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment6/assignment_6.pdf) : (Web): 40 + 5 Bonus Points___
+    - [ ] 6.1: Temperature/CO2 plotter (10 points)
+    - [ ] 6.2: Visualization web app (6 points)
+    - [ ] 6.3: Interactive visualization (8 points)
+    - [ ] 6.4: Visualization of CO2 emissions by country (10 points)
+    - [ ] 6.5: Documentation and help page (6 points)
+    - [ ] 6.6: Predicting the future (5 points)
+
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
 
@@ -62,6 +70,8 @@ Folder		|	Tasks	|	Files
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | Review          | feedback.tex, feedback.pdf
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.1, 5.2 		  | parser.py
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.3, 5.4, 5,5   | scraper.py
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4        | temperature CO2 plotter.py, co2.csv, temperature.csv
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web visualization.py
 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
