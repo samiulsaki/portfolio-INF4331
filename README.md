@@ -73,7 +73,6 @@ Folder		|	Tasks	|	Files
 [*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4        | temperature CO2 plotter.py, co2.csv, temperature.csv
 [*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web visualization.py
 
-
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
 ##### Author:
