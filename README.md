@@ -29,14 +29,14 @@
     - [x] 4.8: Bonus contest: taking it to the limit (5 Bonus Points)
 * ___[Assignment 4.5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment4/Peer-review%20information.txt) : (peer-review): 10___
 
-* ___[Assignment 5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment5/assignment_5.pdf) : (Regexes): 30 + 10 Bonus Points___
+* ___[Assignment 5](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment5/assignment_5.pdf) : (regexes): 30 + 10 Bonus Points___
     - [x] 5.1: Nwodkram parser (10 points)
     - [x] 5.2: Extending nwodkram (6 points)
     - [x] 5.3: Finding emails (9 points)
     - [x] 5.4: Finding URLs (10 points)
     - [x] 5.5: Search (almost) ALL the pages (5 points)
 
-* ___[Assignment 6](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment6/assignment_6.pdf) : (Web): 40 + 5 Bonus Points___
+* ___[Assignment 6](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment6/assignment_6.pdf) : (web): 40 + 5 Bonus Points___
     - [ ] 6.1: Temperature/CO2 plotter (10 points)
     - [ ] 6.2: Visualization web app (6 points)
     - [ ] 6.3: Interactive visualization (8 points)
