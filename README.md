@@ -70,8 +70,9 @@ Folder		|	Tasks	|	Files
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | Review          | feedback.tex, feedback.pdf
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.1, 5.2 		  | parser.py
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.3, 5.4, 5,5   | scraper.py
-[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4, 6.5   | temperature CO2 plotter.py (co2.csv, temperature.csv)
-[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web visualization.py
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4, 6.5   | temperature_CO2_plotter.py
+[*assignment6/sources*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/sources)            | sources         | co2.csv, temperature.csv, CO2_by_country.csv
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web_visualization.py 
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
