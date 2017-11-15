@@ -37,7 +37,7 @@
     - [x] 5.5: Search (almost) ALL the pages (5 points)
 
 * ___[Assignment 6](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment6/assignment_6.pdf) : (web): 40 + 5 Bonus Points___
-    - [ ] 6.1: Temperature/CO2 plotter (10 points)
+    - [x] 6.1: Temperature/CO2 plotter (10 points)
     - [ ] 6.2: Visualization web app (6 points)
     - [ ] 6.3: Interactive visualization (8 points)
     - [ ] 6.4: Visualization of CO2 emissions by country (10 points)
