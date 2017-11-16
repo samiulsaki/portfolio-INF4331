@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from io import BytesIO
 
 countryCO2CSV = pd.read_csv('sources/CO2_by_country.csv', sep=',')
 globalCO2CSV = pd.read_csv('sources/co2.csv', sep=',')
@@ -25,11 +25,28 @@ tempYearMax = globalTempCSV["Year"].max()
 globalCO2YearMin = globalCO2CSV["Year"].min()
 globalCO2YearMax = globalCO2CSV["Year"].max()
 
+class EmptyData_ERROR(Exception):
+	"""Empty DataFrame Error is raised when no data can be found for plotting"""
+	pass
+
+def plotify(title,xLabel,yLabel,minY,maxY):
+    plt.title(title)
+    plt.xlabel(xLabel)
+    plt.ylabel(yLabel)
+    plt.legend()
+    plt.ylim((minY, maxY))
+    #plt.savefig('plots/imageTemp.png')
+    #plt.show()
+    image = BytesIO()
+    plt.savefig(image, format="png")
+    image.seek(0)
+    return image
+
 def plot_temperature(month, start=None, end=None, minY=None, maxY=None):
     if start != None:
         start = start - tempYearMin
     if end != None:
-        end = end - tempYearMax
+        end = end - tempYearMax-1
     month = months[month]
     tempData = globalTempCSV[start:end]
 
@@ -44,22 +61,28 @@ def plot_temperature(month, start=None, end=None, minY=None, maxY=None):
     # Plotting the data
     plt.figure()
     plt.plot(tempData["Year"],tempData[month], "-bo", markersize=3)
-    plt.title("The Temperature in All of " + month)
-    plt.xlabel("Year")
-    plt.ylabel("Temperature ($^\circ$C)")
-    plt.legend()
-    plt.ylim((minY, maxY))
-    plt.savefig('plots/imageTemp.png')
-    plt.show()    
+    title = ("The Temperature in All of " + month)
+    xLabel = "Year"
+    yLabel = "Temperature ($^\circ$C)"
+    # plt.title("The Temperature in All of " + month)
+    # plt.xlabel("Year")
+    # plt.ylabel("Temperature ($^\circ$C)")
+    # plt.legend()
+    # plt.ylim((minY, maxY))
+    # #plt.savefig('plots/imageTemp.png')
+    # plt.show()
+    image = plotify(title,xLabel,yLabel,minY,maxY)
     plt.close()
+    return [image]
 
-def plot_CO2_global(column="Carbon", start=None, end=None, minY=None, maxY=None):
+def plot_CO2_global(start=None, end=None, minY=None, maxY=None):
     if start !=None:
         start = start - globalCO2YearMin
     if end != None:
-        end = end - globalCO2YearMax+10
+        end = end - globalCO2YearMax-1
+
     tempData = globalCO2CSV[start:end]
-    #column = "Carbon"
+    column = "Carbon"
     if (minY != None) and (maxY != None):
         tempData = tempData[(tempData[column] >= minY) & (tempData[column] <= maxY)]
     elif minY != None:
@@ -70,14 +93,16 @@ def plot_CO2_global(column="Carbon", start=None, end=None, minY=None, maxY=None)
     # Plotting the data
     plt.figure()
     plt.plot(tempData["Year"],tempData[column], "-r", markersize=3)
-    plt.title("The Fossil-Fuel CO2 Emissions (Globally)")
-    plt.xlabel("Year")
-    plt.ylabel("Emission")
-    plt.legend()
-    plt.ylim((minY, maxY))
-    plt.savefig('plots/imageCO2Global.png')
-    plt.show()    
+    title = ("The Fossil-Fuel CO2 Emissions (Globally)")
+    xLabel = "Year"
+    yLabel = "Emission"
+    #plt.legend()
+    #plt.ylim((minY, maxY))
+    #plt.savefig('plots/imageCO2Global.png')
+    #plt.show()
+    image = plotify(title,xLabel,yLabel,minY,maxY)
     plt.close()
+    return [image]
 
 
 def plot_CO2_country(year, up=None, low=None):
@@ -118,6 +143,6 @@ def plot_CO2_country(year, up=None, low=None):
             plt.close()
 	
 if __name__ == "__main__":
-    plot_temperature('jan')
+    plot_temperature('sep')
     plot_CO2_global()
-    plot_CO2_country(2000, up=None, low=10)
+    #plot_CO2_country(2000, up=None, low=10)

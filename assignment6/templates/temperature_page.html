@@ -1,0 +1,45 @@
+<!doctype html>
+<title>Global Temperature</title>
+
+<form action="/" method="GET">
+    <button type="submit">
+        <H3>Return to Home Page</H3>
+    </button>
+</form>
+
+<form action="/temperature" method="POST">
+  <br><br>
+    <strong>Insert first three letters of the months (e.g. jan, feb, mar...):</strong><br>
+    <input name="month" type="text" min="jan", max="dec"
+        {% if m %} value="{{m}}" {% else %} value="jan" {% endif %}>
+  <br><br>
+    <strong>Time Range (in year):</strong><br> 
+    <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}"
+        {% if x1 %} value="{{x1}}" {% else %} value="{{yearMin}}" {% endif %}> -
+    <input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}"
+        {% if x2 %} value="{{x2}}" {% else %} value="{{yearMax}}" {% endif %}>
+  <br>
+  
+  <br>
+  <H5>(Leave the following fields empty for default)</H5>
+        <strong>Minimum (Y-Axis):</strong> <br>
+        <input name="minY" type="number" placeholder="default" step="0.01"
+            {% if y1 %} value="{{y1}}" {% else %} value="" {% endif %}>
+  <br><br>
+        <strong>Maximum(Y-Axis):</strong> <br>
+        <input name="maxY" type="number" placeholder="default" step="0.01"
+            {% if y2 %} value="{{y2}}" {% else %} value="" {% endif %}>
+  <br><br>
+  <button type="reset" value="Reset">Mistake Cleaner</button>
+  <input type="submit" value="Create/Update">
+</form>
+
+{% if error %}
+<p style="color:red">{{error}}</p>
+{% endif %}
+
+{% if plots %} 
+  {% for p in plots %}
+    <br><img src="data:image/png;base64,{{p}}" width=600 height=400>
+  {% endfor %}
+{% endif %}
