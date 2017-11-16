@@ -38,8 +38,8 @@
 
 * ___[Assignment 6](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment6/assignment_6.pdf) : (web): 40 + 5 Bonus Points___
     - [x] 6.1: Temperature/CO2 plotter (10 points)
-    - [ ] 6.2: Visualization web app (6 points)
-    - [ ] 6.3: Interactive visualization (8 points)
+    - [x] 6.2: Visualization web app (6 points)
+    - [x] 6.3: Interactive visualization (8 points)
     - [ ] 6.4: Visualization of CO2 emissions by country (10 points)
     - [ ] 6.5: Documentation and help page (6 points)
     - [ ] 6.6: Predicting the future (5 points)
@@ -70,9 +70,11 @@ Folder		|	Tasks	|	Files
 [*assignment4*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment4)	                        | Review          | feedback.tex, feedback.pdf
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.1, 5.2 		  | parser.py
 [*assignment5*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment5)	                        | 5.3, 5.4, 5,5   | scraper.py
-[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4, 6.5   | temperature_CO2_plotter.py
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.1, 6.4        | temperature\_CO2\_plotter.py
+[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web_visualization.py
+[*assignment6/static*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/static)              | Homepage Image  | globalWarming.jpg
 [*assignment6/sources*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/sources)            | Sources         | CO2_by_country.csv, co2.csv, temperature.csv
-[*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web_visualization.py 
+[*assignment6/templates*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/templates)        | HTML Templates  | homepage.html, co2_global_page.html, temperature_page.html
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
