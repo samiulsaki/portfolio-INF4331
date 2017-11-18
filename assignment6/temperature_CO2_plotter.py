@@ -1,6 +1,13 @@
+"""
+@author: samiulsaki
+The python script with following functions:
+(1) 
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from io import BytesIO
+import numpy as np
 
 countryCO2CSV = pd.read_csv('sources/CO2_by_country.csv', sep=',')
 globalCO2CSV = pd.read_csv('sources/co2.csv', sep=',')
@@ -25,15 +32,12 @@ tempYearMax = globalTempCSV["Year"].max()
 globalCO2YearMin = globalCO2CSV["Year"].min()
 globalCO2YearMax = globalCO2CSV["Year"].max()
 
-class EmptyData_ERROR(Exception):
-	"""Empty DataFrame Error is raised when no data can be found for plotting"""
-	pass
-
-def plotify(title,xLabel,yLabel,minY,maxY):
+def plotify(title,xLabel,yLabel,minY,maxY,minX,maxX):
     plt.title(title)
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
     plt.legend()
+    plt.xlim((minX,maxX))
     plt.ylim((minY, maxY))
     #plt.savefig('plots/imageTemp.png')
     #plt.show()
@@ -71,7 +75,7 @@ def plot_temperature(month, start=None, end=None, minY=None, maxY=None):
     # plt.ylim((minY, maxY))
     # #plt.savefig('plots/imageTemp.png')
     # plt.show()
-    image = plotify(title,xLabel,yLabel,minY,maxY)
+    image = plotify(title,xLabel,yLabel,minY,maxY,minX=None,maxX=None)
     plt.close()
     return [image]
 
@@ -100,7 +104,7 @@ def plot_CO2_global(start=None, end=None, minY=None, maxY=None):
     #plt.ylim((minY, maxY))
     #plt.savefig('plots/imageCO2Global.png')
     #plt.show()
-    image = plotify(title,xLabel,yLabel,minY,maxY)
+    image = plotify(title,xLabel,yLabel,minY,maxY,minX=None,maxX=None)
     plt.close()
     return [image]
 
@@ -109,40 +113,47 @@ def plot_CO2_country(year, up=None, low=None):
     year = str(year)
     tempData = countryCO2CSV[["Country Code", year]]
     #print(tempData)
-    
     if (low !=None) and (up !=None):
         tempData = tempData[(tempData[year] >= low) & (tempData[year] <= up)]
     elif low !=None:
         tempData = tempData[tempData[year] >= low]
     elif up != None:
         tempData = tempData[tempData[year] <= up]
-    
-    if up is None:
-        max = round(1+tempData[year].max())
-    else:
-        max = round(1+up)
-    min = 0
-    
+    minX = 0
+    if up is None: maxX = round(1+tempData[year].max())
+    else: maxX = round(1+up)
     
     # Plot the data
-    #images = []
-    nPerPlot = 30                #-- number of countries per plot
-    nPlots = (len(tempData) // nPerPlot) #-- number of countries
-    if nPlots == 0: nPlots = 1 #-- at least one plot must be plotted
-    for i in range(nPlots):
-        plt.figure()
-        if i == nPlots: #-- last plot
-            tempData[i*nPerPlot:].plot(x="Country Code", y=year, kind="barh")
-        else:
-            start = i*nPerPlot
-            end = start + nPerPlot
-            tempData[start:end].plot(x="Country Code", y=year, kind="barh")
-            plt.xlabel("The CO2 Emissions (million tons per capita)")
-            plt.xlim((min,max))
-            plt.show()
-            plt.close()
-	
+    images = []
+    each_plot = 10                              # number of countries per plot
+    total_plots = (len(tempData) / each_plot)   # number of countries
+    #if total_plots == 0: total_plots = 1 #-- at least one plot must be plotted
+    for i in np.arange(0,total_plots,1):        
+        #plt.figure(figsize=(1,1))
+        #plt.subplots(figsize=(17, 10))
+        # if i == total_plots: #-- last plot
+        #     tempData[i*each_plot:].plot(x="Country Code", y=year, kind="barh")
+        # else:
+        start = int(i) * each_plot
+        end = start + each_plot
+        tempData[start:end].plot(x="Country Code", y=year, kind="barh",color="black")
+        #print(tempData[start:end])
+        #plt.title ("The Fossil-Fuel CO2 Emissions (by Country)")
+        title = "The Fossil-Fuel CO2 Emissions (by Country)"
+        #plt.xlabel("CO2 Emission Level (metric tons per capita)")
+        xLabel = "CO2 Emission Level (metric tons per capita)"
+        yLabel= "Country Code"
+        #print(start,end,min,max)
+        #plt.xlim((min,max))
+        images.append(plotify(title,xLabel,yLabel,minY=None,maxY=None,minX=minX,maxX=maxX))
+        #plt.show()        
+        plt.close()
+    return images
+
 if __name__ == "__main__":
+    """
+    The main module
+    """
     plot_temperature('sep')
     plot_CO2_global()
-    #plot_CO2_country(2000, up=None, low=10)
+    plot_CO2_country(1960, up=10, low=6)

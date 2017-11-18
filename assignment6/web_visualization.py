@@ -1,7 +1,7 @@
 import base64
 from time import time
 from flask import Flask, render_template, request
-from temperature_CO2_plotter import plot_temperature, plot_CO2_country, plot_CO2_global, EmptyData_ERROR,\
+from temperature_CO2_plotter import plot_temperature, plot_CO2_country, plot_CO2_global,\
                                     tempYearMin, tempYearMax, globalCO2YearMin, globalCO2YearMax
 
 app = Flask(__name__)
@@ -73,7 +73,21 @@ def temperature():
     return render_template("temperature_page.html", plots=plots, yearMin=tempYearMin, yearMax=tempYearMax, 
                             m=month,x1=start, x2=end, y1=minY, y2=maxY)
 
+@app.route("/co2_country", methods=["POST", "GET"])
+def co2_country():
+    if request.method =="GET":
+        return render_template("co2_country_page.html", yearMin=1960, yearMax=2016)
 
+    year = request.form["year"]
+    up = request.form["up"]
+    low = request.form["low"]
+    args = [_int(year),_float(up),_float(low)]
+
+    #plots = plot_CO2_country(*args)
+    plots = [base64.b64encode(p.getvalue()).decode("ascii") for p in plot_CO2_country(*args)]
+    
+    return render_template("co2_country_page.html", plots=plots, yearMin=1960, yearMax=2016, 
+                            y = year, b1=up, b2=low)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

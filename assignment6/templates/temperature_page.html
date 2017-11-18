@@ -14,21 +14,19 @@
         {% if m %} value="{{m}}" {% else %} value="jan" {% endif %}>
   <br><br>
     <strong>Time Range (in year):</strong><br> 
-    <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}"
-        {% if x1 %} value="{{x1}}" {% else %} value="{{yearMin}}" {% endif %}> -
-    <input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}"
+    From <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}"
+        {% if x1 %} value="{{x1}}" {% else %} value="{{yearMin}}" {% endif %}>
+    &nbsp;To&nbsp;<input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}"
         {% if x2 %} value="{{x2}}" {% else %} value="{{yearMax}}" {% endif %}>
   <br>
   
   <br>
   <H5>(Leave the following fields empty for default)</H5>
-        <strong>Minimum (Y-Axis):</strong> <br>
-        <input name="minY" type="number" placeholder="default" step="0.01"
-            {% if y1 %} value="{{y1}}" {% else %} value="" {% endif %}>
-  <br><br>
-        <strong>Maximum(Y-Axis):</strong> <br>
-        <input name="maxY" type="number" placeholder="default" step="0.01"
-            {% if y2 %} value="{{y2}}" {% else %} value="" {% endif %}>
+    <strong>Limits (Y-Axis):</strong> <br>
+    From <input name="minY" type="number" placeholder="default" step="0.01"
+        {% if y1 %} value="{{y1}}" {% else %} value="" {% endif %}> 
+    &nbsp;To&nbsp; <input name="maxY" type="number" placeholder="default" step="0.01"
+        {% if y2 %} value="{{y2}}" {% else %} value="" {% endif %}>
   <br><br>
   <button type="reset" value="Reset">Mistake Cleaner</button>
   <input type="submit" value="Create/Update">
