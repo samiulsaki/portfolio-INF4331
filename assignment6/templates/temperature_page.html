@@ -9,7 +9,7 @@
 
 <form action="/temperature" method="POST">
   <br><br>
-    <strong>Insert first three letters of the months (e.g. jan, feb, mar...):</strong><br>
+    <strong>Insert first three letters of the months (e.g. jan, feb, mar ...):</strong><br>
     <input name="month" type="text" min="jan", max="dec"
         {% if m %} value="{{m}}" {% else %} value="jan" {% endif %}>
   <br><br>

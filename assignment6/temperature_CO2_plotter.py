@@ -66,8 +66,7 @@ def plot_temperature(month, start=None, end=None, minY=None, maxY=None):
     This function plots a pyplot (scatter) of the global temperature in a given 
     time period from given data. It returns an image/pyplot figure as a BytesIO object.
  
-        @param month        represents the first three letters of months in calender 
-                            (e.g. jan, feb, mar ...)
+        @param month        represents the first three letters of months in calender (e.g. jan, feb, mar ...)
         @param start        represents the first year in the pyplot
         @param end          represents the last year in the pyplot
         @param minY         represents the lower limit of Y axis (temperature) in the pyplot
