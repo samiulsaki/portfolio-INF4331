@@ -39,6 +39,15 @@ def plotify(title,xLabel,yLabel,minY,maxY,minX,maxX):
     """
     Creates and saves the pyplot image into a BytesIO object 
     and then returns it to thefunction
+
+        @param title        the title of the pyplot
+        @param xLabel       the x-axis label of the pyplot
+        @param yLabel       the y-axis label of the pyplot
+        @param minY         the minimum limit of Y-axis
+        @param maxY         the maximum limit of Y-axis
+        @param minX         the minimum limit of X-axis
+        @param maxX         the maximum limit of X-axis
+        @return             returns image(pyplot) in a form of BytesIO object
     """
     plt.title(title)
     plt.xlabel(xLabel)
@@ -56,21 +65,14 @@ def plot_temperature(month, start=None, end=None, minY=None, maxY=None):
     """
     This function plots a pyplot (scatter) of the global temperature in a given 
     time period from given data. It returns an image/pyplot figure as a BytesIO object.
-    
-    :type month: string
-    :param month: represents the first three letters of months in calender (e.g. jan, feb, mar...)
-
-    :type start: integer
-    :param start: represents the first year in the pyplot
-
-    :type end: integer
-    :param end: represents the last year in the pyplot
-
-    :type minY: float
-    :param minY: represents the lower limit of Y axis (temperature) in the pyplot
-
-    :type maxY: float
-    :param maxY: represents the upper limit of Y axis (temperature) in the pyplot
+ 
+        @param month        represents the first three letters of months in calender 
+                            (e.g. jan, feb, mar ...)
+        @param start        represents the first year in the pyplot
+        @param end          represents the last year in the pyplot
+        @param minY         represents the lower limit of Y axis (temperature) in the pyplot
+        @param maxY         represents the upper limit of Y axis (temperature) in the pyplot
+        @return             returns plyplot for the global temperature with given arguments
     """
     # Setting the first and last year in the pyplot
     if start != None:
@@ -105,19 +107,12 @@ def plot_CO2_global(start=None, end=None, minY=None, maxY=None):
     This function plots a pyplot of the global CO2 emissions in a given 
     time period from given data. It returns an image/pyplot figure as a BytesIO object.
 
-    :type start: integer
-    :param start: represents the first year in the pyplot
-
-    :type end: integer
-    :param end: represents the last year in the pyplot
-
-    :type minY: float
-    :param minY: represents the lower limit of Y axis (CO2 emission level) in the pyplot
-
-    :type maxY: float
-    :param maxY: represents the upper limit of Y axis (CO2 emission level) in the pyplot
-    """
-    
+        @param start        represents the first year in the pyplot
+        @param end          represents the last year in the pyplot
+        @param minY         represents the lower limit of Y axis (CO2 emission level) in the pyplot
+        @param maxY         represents the upper limit of Y axis (CO2 emission level) in the pyplot
+        @return             returns plyplot for the global CO2 emissions with given arguments
+    """    
     # Setting the first and last year in the pyplot
     if start !=None:
         start = start - globalCO2YearMin
@@ -151,14 +146,11 @@ def plot_CO2_country(year, up=None, low=None):
     different years within the given preset threshold from given data. It returns a list of image/
     pyplot figures as a BytesIO object.
 
-    :type year: integer
-    :param year: represents the year that is set to be plotted in the pyplot
-
-    :type up: float
-    :param up: upper boundary of the threshold (X-Axis) in the pyplot
-
-    :type low: float
-    :param low: lower boundary of the threshold (X-axis) in the pyplot
+        @param year         represents the year that is set to be plotted in the pyplot
+        @param up           upper boundary of the threshold (X-Axis) in the pyplot
+        @param low          lower boundary of the threshold (X-axis) in the pyplot
+        @return             returns plyplot(s) for the CO2 emission for the individual countries 
+                            with given arguments
     """
     # Setting the year to be plotted in the pyplot
     year = str(year)

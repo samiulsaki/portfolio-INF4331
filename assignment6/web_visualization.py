@@ -40,8 +40,19 @@ def _str(input):
 def homepage():
     return render_template("homepage.html")
 
+@app.route("/help")
+def help():
+    """
+    Returns to the help page
+    """
+    return render_template("help.html")
+
 @app.route("/co2_global", methods=["POST", "GET"])
 def co2_global():
+    """
+    Takes the given aguments from the user and creates plot with plot_CO2_global and 
+    returns it to co2_global_page.html
+    """
     if request.method == "GET":
         return render_template("co2_global_page.html", yearMin=globalCO2YearMin, yearMax=globalCO2YearMax)
     start = request.form["start"]
@@ -49,13 +60,16 @@ def co2_global():
     minY = request.form["minY"]
     maxY = request.form["maxY"]
     args  = [_int(start),_int(end),_float(minY),_float(maxY)]
-    plots = plot_CO2_global(*args)
-    plots = [base64.b64encode(p.getvalue()).decode("ascii") for p in plots]
+    plots = [base64.b64encode(p.getvalue()).decode("ascii") for p in plot_CO2_global(*args)]
     return render_template("co2_global_page.html", plots=plots, yearMin=globalCO2YearMin, yearMax=globalCO2YearMax, 
                             x1=start, x2=end, y1=minY, y2=maxY)
 
 @app.route("/temperature", methods=["POST", "GET"])
 def temperature():
+    """
+    Takes the given aguments from the user and creates plot with plot_temperature and 
+    returns it to temperature_page.html
+    """
     if request.method == "GET":
         return render_template("temperature_page.html", yearMin=tempYearMin, yearMax=tempYearMax)
     month = request.form["month"]
@@ -64,13 +78,16 @@ def temperature():
     minY = request.form["minY"]
     maxY = request.form["maxY"]
     args  = [_str(month),_int(start),_int(end),_float(minY),_float(maxY)]
-    plots = plot_temperature(*args)
-    plots = [base64.b64encode(p.getvalue()).decode("ascii") for p in plots]
+    plots = [base64.b64encode(p.getvalue()).decode("ascii") for p in plot_temperature(*args)]
     return render_template("temperature_page.html", plots=plots, yearMin=tempYearMin, yearMax=tempYearMax, 
                             m=month,x1=start, x2=end, y1=minY, y2=maxY)
 
 @app.route("/co2_country", methods=["POST", "GET"])
 def co2_country():
+    """
+    Takes the given aguments from the user and creates plot with plot_CO2_country and 
+    returns it to co2_country_page.html
+    """
     if request.method =="GET":
         return render_template("co2_country_page.html", yearMin=1960, yearMax=2016)
     year = request.form["year"]

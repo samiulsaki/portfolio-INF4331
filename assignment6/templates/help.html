@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module temperature_CO2_plotter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>temperature_CO2_plotter</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/samiulsaki/Documents/inf4331nsa/INF3331-aschowdh/assignment6/temperature_CO2_plotter.py">/Users/samiulsaki/Documents/inf4331nsa/INF3331-aschowdh/assignment6/temperature_CO2_plotter.py</a></font></td></tr></table>
+    <p><tt>@author:&nbsp;samiulsaki<br>
+The&nbsp;python&nbsp;script&nbsp;with&nbsp;following&nbsp;functions:<br>
+(1)&nbsp;plotify:&nbsp;Creates&nbsp;a&nbsp;plot&nbsp;with&nbsp;given&nbsp;arguments<br>
+(2)&nbsp;plot_temperature:&nbsp;Temperature&nbsp;(globally)<br>
+(3)&nbsp;plot_CO2_global:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(globally)<br>
+(4)&nbsp;plot_CO2_country:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(by&nbsp;country)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-plot_CO2_country"><strong>plot_CO2_country</strong></a>(year, up=None, low=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;bar&nbsp;chart&nbsp;of&nbsp;the&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;emissions&nbsp;of&nbsp;individual&nbsp;countries&nbsp;at&nbsp;<br>
+different&nbsp;years&nbsp;within&nbsp;the&nbsp;given&nbsp;preset&nbsp;threshold&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;image/<br>
+pyplot&nbsp;figures&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;year&nbsp;that&nbsp;is&nbsp;set&nbsp;to&nbsp;be&nbsp;plotted&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upper&nbsp;boundary&nbsp;of&nbsp;the&nbsp;threshold&nbsp;(X-Axis)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lower&nbsp;boundary&nbsp;of&nbsp;the&nbsp;threshold&nbsp;(X-axis)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot(s)&nbsp;for&nbsp;the&nbsp;CO2&nbsp;emission&nbsp;for&nbsp;the&nbsp;individual&nbsp;countries&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
+ <dl><dt><a name="-plot_CO2_global"><strong>plot_CO2_global</strong></a>(start=None, end=None, minY=None, maxY=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;of&nbsp;the&nbsp;global&nbsp;CO2&nbsp;emissions&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
+time&nbsp;period&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;an&nbsp;image/pyplot&nbsp;figure&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;last&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;lower&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(CO2&nbsp;emission&nbsp;level)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;upper&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(CO2&nbsp;emission&nbsp;level)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot&nbsp;for&nbsp;the&nbsp;global&nbsp;CO2&nbsp;emissions&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
+ <dl><dt><a name="-plot_temperature"><strong>plot_temperature</strong></a>(month, start=None, end=None, minY=None, maxY=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;(scatter)&nbsp;of&nbsp;the&nbsp;global&nbsp;temperature&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
+time&nbsp;period&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;an&nbsp;image/pyplot&nbsp;figure&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;three&nbsp;letters&nbsp;of&nbsp;months&nbsp;in&nbsp;calender&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(e.g.&nbsp;jan,&nbsp;feb,&nbsp;mar&nbsp;...)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;last&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;lower&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(temperature)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;upper&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(temperature)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot&nbsp;for&nbsp;the&nbsp;global&nbsp;temperature&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
+ <dl><dt><a name="-plotify"><strong>plotify</strong></a>(title, xLabel, yLabel, minY, maxY, minX, maxX)</dt><dd><tt>Creates&nbsp;and&nbsp;saves&nbsp;the&nbsp;pyplot&nbsp;image&nbsp;into&nbsp;a&nbsp;BytesIO&nbsp;object&nbsp;<br>
+and&nbsp;then&nbsp;returns&nbsp;it&nbsp;to&nbsp;thefunction<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;title&nbsp;of&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;xLabel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;x-axis&nbsp;label&nbsp;of&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;yLabel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;y-axis&nbsp;label&nbsp;of&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;minimum&nbsp;limit&nbsp;of&nbsp;Y-axis<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;maximum&nbsp;limit&nbsp;of&nbsp;Y-axis<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;minimum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;maximum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;image(pyplot)&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;BytesIO&nbsp;object</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>countryCO2CSV</strong> =                                           Countr...NaN   NaN          NaN  
+
+[264 rows x 62 columns]<br>
+<strong>globalCO2CSV</strong> =      Year  Carbon
+0    1751       3
+1    1752   ...   9508
+261  2012    9671
+
+[262 rows x 2 columns]<br>
+<strong>globalCO2YearMax</strong> = 2012<br>
+<strong>globalCO2YearMin</strong> = 1751<br>
+<strong>globalTempCSV</strong> =      Year  January  February  March   April     ...46     5.632    -0.338  
+
+[197 rows x 13 columns]<br>
+<strong>months</strong> = {'apr': 'April', 'aug': 'August', 'dec': 'December', 'feb': 'February', 'jan': 'January', 'jul': 'July', 'jun': 'June', 'mar': 'March', 'may': 'May', 'nov': 'November', ...}<br>
+<strong>tempYearMax</strong> = 2012<br>
+<strong>tempYearMin</strong> = 1816</td></tr></table>
+</body></html>
