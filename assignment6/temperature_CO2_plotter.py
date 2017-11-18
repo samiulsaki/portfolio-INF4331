@@ -1,7 +1,8 @@
 """
 @author: samiulsaki
 The python script with following functions:
-(1) 
+(1) plotify: Creates a plot with given arguments
+(2) 
 """
 
 import pandas as pd
