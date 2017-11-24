@@ -1,39 +1,43 @@
 <!doctype html>
 <title>CO2 Global Emission</title>
+<style>
+    div {
+        float: left;
+    }
 
-<form action="/" method="GET">
-    <button type="submit">
-        <H3>Return to Home Page</H3>
-    </button>
-</form>
+    img {
+        margin-left: 120px;
+    }
+</style>
+<div>
+    <form action="/" method="GET">
+        <button type="submit">
+            <H3>Return to Home Page</H3>
+        </button>
+    </form>
 
-<form action="/co2_global" method="POST">
-    <br>
-    <strong>Time Range (in year):</strong><br> 
-    From <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}"
-        {% if x1 %} value="{{x1}}" {% else %} value="{{yearMin}}" {% endif %}>
-    &nbsp;To&nbsp; <input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}"
-        {% if x2 %} value="{{x2}}" {% else %} value="{{yearMax}}" {% endif %}>
-    <br>
-    
-    <br>
-    <H5>(Leave the following fields empty for default)</H5>
-    <strong>Limits (Y-Axis):</strong>  <br>
-    From <input name="minY" type="number" placeholder="default" step="0.01"
-        {% if y1 %} value="{{y1}}" {% else %} value="" {% endif %}> 
-    &nbsp;To&nbsp; <input name="maxY" type="number" placeholder="default" step="0.01"
-        {% if y2 %} value="{{y2}}" {% else %} value="" {% endif %}>
-    <br><br>
-    <button type="reset" value="Reset">Mistake Cleaner</button>
-    <input type="submit" value="Create/Update">
-</form>
+    <form action="/co2_global" method="POST">
+        <br>
+        <strong>Time Range (in year):</strong>
+        <br> From
+        <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}" {% if start %} value="{{start}}" {% else %} value="{{yearMin}}" {% endif %}> 
+        &nbsp;To&nbsp;
+        <input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}" {% if end %} value="{{end}}" {% else %} value="{{yearMax}}" {% endif %}>
+        <br>
+        <br>
+        <H5>(Leave the following fields empty for default)</H5>
+        <strong>Limits (Y-Axis):</strong>
+        <br> From
+        <input name="minY" type="number" placeholder="default" step="100" {% if minY %} value="{{minY}}" {% else %} value="" {% endif %}> 
+        &nbsp;To&nbsp;
+        <input name="maxY" type="number" placeholder="default" step="100" {% if maxY %} value="{{maxY}}" {% else %} value="" {% endif %}>
+        <br>
+        <br>
+        <button type="reset" value="Reset">Mistake Cleaner</button>
+        <input type="submit" value="Create/Update">
+    </form>
+</div>
 
-
-{% if error %}
-    <p style="color:red">{{error}}</p>
-{% endif %}
-{% if plots %} 
-    {% for p in plots %}
-        <br><img src="data:image/png;base64,{{p}}" width=600 height=400>
-    {% endfor %}
-{% endif %}
+<div>
+    {% for plot in plots %} <br> <img src="data:image/png;base64,{{plot}}" width=800 height=600> <br> {% endfor %}
+</div>

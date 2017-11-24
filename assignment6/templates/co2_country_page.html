@@ -1,38 +1,41 @@
 <!doctype html>
 <title>CO2 Country Emission</title>
+<style>
+    div {
+        float: left;
+    }
 
-<form action="/" method="GET">
-    <button type="submit">
-        <H3>Return to Home Page</H3>
-    </button>
-</form>
+    img {
+        margin-left: 120px;
+    }
+</style>
+<div>
+    <form action="/" method="GET">
+        <button type="submit">
+            <H3>Return to Home Page</H3>
+        </button>
+    </form>
 
-<form action="/co2_country" method="POST">
-  <br><br>
-    Year: <br>
-    <input name="year" type="number" min="{{yearMin}}" max="{{yearMax}}"
-    {% if y %} value="{{y}}" 
-    {% else %} value="{{yearMin}}" 
-    {% endif %}>
-  <br><br>
-    Choose upper boundary: <br>
-    <input name="up" type="number" placeholder="max temp. (from data)" step="0.1"
-        {% if b2 %} value="{{b1}}" {% else %} value="" {% endif %}>
-  <br><br>
-    Choose lower boundary: <br>
-    <input name="low" type="number" placeholder="min temp. (from data)" step="0.1"
-        {% if b1 %} value="{{b2}}" {% else %} value="" {% endif %}>
-    <br><br>
-    <button type="reset" value="Reset">Mistake Cleaner</button>
-    <input type="submit" value="Create/Update">
-</form>
+    <form action="/co2_country" method="POST">
+        <br>
+        <br> Year:
+        <br>
+        <input name="year" type="number" min="{{yearMin}}" max="{{yearMax}}" {% if y %} value="{{y}}" {% else %} value="{{yearMin}}" {% endif %}>
+        <br>
+        <br> Choose upper boundary:
+        <br>
+        <input name="up" type="number" placeholder="max temp. (from data)" step="0.1" {% if up %} value="{{up}}" {% else %} value="" {% endif %}>
+        <br>
+        <br> Choose lower boundary:
+        <br>
+        <input name="low" type="number" placeholder="min temp. (from data)" step="0.1" {% if low %} value="{{low}}" {% else %} value="" {% endif %}>
+        <br>
+        <br>
+        <button type="reset" value="Reset">Mistake Cleaner</button>
+        <input type="submit" value="Create/Update">
+    </form>
+</div>
 
-{% if error %}
-<p style="color:red">{{error}}</p>
-{% endif %}
-
-{% if plots %} 
-  {% for p in plots %}
-    <br><img src="data:image/png;base64,{{p}}" width=600 height=400>
-  {% endfor %}
-{% endif %}
+<div>
+    {% for plot in plots %} <br> <img src="data:image/png;base64,{{plot}}" width=800 height=600> <br> {% endfor %} 
+</div>

@@ -14,7 +14,8 @@ The&nbsp;python&nbsp;script&nbsp;with&nbsp;following&nbsp;functions:<br>
 (1)&nbsp;plotify:&nbsp;Creates&nbsp;a&nbsp;plot&nbsp;with&nbsp;given&nbsp;arguments<br>
 (2)&nbsp;plot_temperature:&nbsp;Temperature&nbsp;(globally)<br>
 (3)&nbsp;plot_CO2_global:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(globally)<br>
-(4)&nbsp;plot_CO2_country:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(by&nbsp;country)</tt></p>
+(4)&nbsp;plot_CO2_country:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(by&nbsp;country)<br>
+(5)&nbsp;predicting_future:&nbsp;Prediction&nbsp;of&nbsp;the&nbsp;Future&nbsp;of&nbsp;CO2&nbsp;Level</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -32,24 +33,26 @@ The&nbsp;python&nbsp;script&nbsp;with&nbsp;following&nbsp;functions:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-plot_CO2_country"><strong>plot_CO2_country</strong></a>(year, up=None, low=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;bar&nbsp;chart&nbsp;of&nbsp;the&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;emissions&nbsp;of&nbsp;individual&nbsp;countries&nbsp;at&nbsp;<br>
+<td width="100%"><dl><dt><a name="-plot_CO2_country"><strong>plot_CO2_country</strong></a>(year, up=None, low=None, show_plot=False)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;bar&nbsp;chart&nbsp;of&nbsp;the&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;emissions&nbsp;of&nbsp;individual&nbsp;countries&nbsp;at&nbsp;<br>
 different&nbsp;years&nbsp;within&nbsp;the&nbsp;given&nbsp;preset&nbsp;threshold&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;image/<br>
 pyplot&nbsp;figures&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;year&nbsp;that&nbsp;is&nbsp;set&nbsp;to&nbsp;be&nbsp;plotted&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;upper&nbsp;boundary&nbsp;of&nbsp;the&nbsp;threshold&nbsp;(X-Axis)&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lower&nbsp;boundary&nbsp;of&nbsp;the&nbsp;threshold&nbsp;(X-axis)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;show_plot&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;pyplot&nbsp;if&nbsp;set&nbsp;to&nbsp;True<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot(s)&nbsp;for&nbsp;the&nbsp;CO2&nbsp;emission&nbsp;for&nbsp;the&nbsp;individual&nbsp;countries&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
- <dl><dt><a name="-plot_CO2_global"><strong>plot_CO2_global</strong></a>(start=None, end=None, minY=None, maxY=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;of&nbsp;the&nbsp;global&nbsp;CO2&nbsp;emissions&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
+ <dl><dt><a name="-plot_CO2_global"><strong>plot_CO2_global</strong></a>(start=None, end=None, minY=None, maxY=None, show_plot=False)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;of&nbsp;the&nbsp;global&nbsp;CO2&nbsp;emissions&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
 time&nbsp;period&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;an&nbsp;image/pyplot&nbsp;figure&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;last&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;lower&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(CO2&nbsp;emission&nbsp;level)&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;upper&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(CO2&nbsp;emission&nbsp;level)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;show_plot&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;pyplot&nbsp;if&nbsp;set&nbsp;to&nbsp;True<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot&nbsp;for&nbsp;the&nbsp;global&nbsp;CO2&nbsp;emissions&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
- <dl><dt><a name="-plot_temperature"><strong>plot_temperature</strong></a>(month, start=None, end=None, minY=None, maxY=None)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;(scatter)&nbsp;of&nbsp;the&nbsp;global&nbsp;temperature&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
+ <dl><dt><a name="-plot_temperature"><strong>plot_temperature</strong></a>(month, start=None, end=None, minY=None, maxY=None, show_plot=False)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;pyplot&nbsp;(scatter)&nbsp;of&nbsp;the&nbsp;global&nbsp;temperature&nbsp;in&nbsp;a&nbsp;given&nbsp;<br>
 time&nbsp;period&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;an&nbsp;image/pyplot&nbsp;figure&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;three&nbsp;letters&nbsp;of&nbsp;months&nbsp;in&nbsp;calender&nbsp;(e.g.&nbsp;jan,&nbsp;feb,&nbsp;mar&nbsp;...)<br>
@@ -57,6 +60,7 @@ time&nbsp;period&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;an&nb
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;last&nbsp;year&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;lower&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(temperature)&nbsp;in&nbsp;the&nbsp;pyplot<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;upper&nbsp;limit&nbsp;of&nbsp;Y&nbsp;axis&nbsp;(temperature)&nbsp;in&nbsp;the&nbsp;pyplot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;show_plot&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;pyplot&nbsp;if&nbsp;set&nbsp;to&nbsp;True<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;plyplot&nbsp;for&nbsp;the&nbsp;global&nbsp;temperature&nbsp;with&nbsp;given&nbsp;arguments</tt></dd></dl>
  <dl><dt><a name="-plotify"><strong>plotify</strong></a>(title, xLabel, yLabel, minY, maxY, minX, maxX)</dt><dd><tt>Creates&nbsp;and&nbsp;saves&nbsp;the&nbsp;pyplot&nbsp;image&nbsp;into&nbsp;a&nbsp;BytesIO&nbsp;object&nbsp;<br>
 and&nbsp;then&nbsp;returns&nbsp;it&nbsp;to&nbsp;thefunction<br>
@@ -69,6 +73,18 @@ and&nbsp;then&nbsp;returns&nbsp;it&nbsp;to&nbsp;thefunction<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;minimum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;maximum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;image(pyplot)&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;BytesIO&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-predicting_future"><strong>predicting_future</strong></a>(month, years=100, show_plot=False)</dt><dd><tt>The&nbsp;function&nbsp;calculates&nbsp;and&nbsp;predicts&nbsp;the&nbsp;future&nbsp;of&nbsp;CO2&nbsp;level&nbsp;over&nbsp;a&nbsp;given&nbsp;time&nbsp;(years)&nbsp;and&nbsp;<br>
+returns&nbsp;them&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;pyplot.&nbsp;It&nbsp;is&nbsp;based&nbsp;on&nbsp;a&nbsp;making&nbsp;a&nbsp;best&nbsp;fit&nbsp;plot&nbsp;on&nbsp;the&nbsp;scattered&nbsp;data&nbsp;<br>
+of&nbsp;CO2&nbsp;(co2)&nbsp;and&nbsp;tmperature&nbsp;(temp).&nbsp;From&nbsp;that&nbsp;we&nbsp;are&nbsp;able&nbsp;to&nbsp;calculate&nbsp;our&nbsp;ax+b&nbsp;and&nbsp;create&nbsp;a&nbsp;<br>
+linear&nbsp;function&nbsp;where&nbsp;it&nbsp;shows&nbsp;the&nbsp;future&nbsp;predicatable&nbsp;level&nbsp;of&nbsp;CO2&nbsp;level&nbsp;in&nbsp;next&nbsp;given&nbsp;years&nbsp;<br>
+in&nbsp;a&nbsp;form&nbsp;of&nbsp;a&nbsp;curve.&nbsp;The&nbsp;estimation&nbsp;of&nbsp;next&nbsp;few&nbsp;years&nbsp;are&nbsp;only&nbsp;based&nbsp;on&nbsp;best&nbsp;predication&nbsp;and&nbsp;<br>
+to&nbsp;use&nbsp;for&nbsp;research&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;three&nbsp;letters&nbsp;of&nbsp;months&nbsp;in&nbsp;calender&nbsp;(e.g.&nbsp;jan,&nbsp;feb,&nbsp;mar&nbsp;...)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;years&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;years&nbsp;in&nbsp;the&nbsp;future&nbsp;the&nbsp;prediction&nbsp;will&nbsp;need&nbsp;to&nbsp;be&nbsp;calculated&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;show_plot&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;pyplot&nbsp;if&nbsp;set&nbsp;to&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;the&nbsp;pyplot&nbsp;with&nbsp;the&nbsp;predicted&nbsp;level&nbsp;of&nbsp;CO2&nbsp;level&nbsp;in&nbsp;next&nbsp;future&nbsp;years&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(user&nbsp;defined)</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">

@@ -1,5 +1,5 @@
 <!doctype html>
-<title>Global Temperature</title>
+<title>Prediction Future</title>
 <style>
     div {
         float: left;
@@ -16,10 +16,9 @@
         </button>
     </form>
 
-    <form action="/temperature" method="POST">
+    <form action="/predict_future" method="POST">
         <br>
-        <br>
-        <strong>Choose a month from the list below:</strong>
+        <br> <strong>Insert first three letters of the months (e.g. jan, feb, mar ...):</strong>
         <br>
         <select name="month">
             <!-- <option value="" selected disabled hidden>Choose Months</option> -->
@@ -37,18 +36,9 @@
             <option value="dec">December </option>
         </select>
         <br>
-        <br> <strong>Time Range (in year):</strong>
-        <br> From
-        <input name="start" type="number" min="{{yearMin}}" max="{{yearMax}}" {% if start %} value="{{start}}" {% else %} value="{{yearMin}}" {% endif %}> 
-        &nbsp;To&nbsp;
-        <input name="end" type="number" min="{{yearMin}}" max="{{yearMax}}" {% if end %} value="{{end}}" {% else %} value="{{yearMax}}" {% endif %}>
-        <br>
-        <br> <H5>(Leave the following fields empty for default)</H5>
-        <strong>Limits (Y-Axis):</strong>
-        <br> From
-        <input name="minY" type="number" placeholder="default" step="0.01" {% if minY %} value="{{minY}}" {% else %} value="" {% endif %}> 
-        &nbsp;To&nbsp;
-        <input name="maxY" type="number" placeholder="default" step="0.01" {% if maxY %} value="{{maxY}}" {% else %} value="" {% endif %}>
+        <br> <strong>(Insert any number of year to predict below):</strong>
+        <br> 
+        <input name="years" type="number" {% if y %} value="{{y}}" {% else %} value="{{100}}" {% endif %}>
         <br>
         <br>
         <button type="reset" value="Reset">Mistake Cleaner</button>
@@ -57,5 +47,5 @@
 </div>
 
 <div>
-    {% for plot in plots %} <br> <img src="data:image/png;base64,{{plot}}" width=800 height=600> <br> {% endfor %} 
+    {% for plot in plots %} <br> <img src="data:image/png;base64,{{plot}}" width=800 height=600> <br> {% endfor %}
 </div>
