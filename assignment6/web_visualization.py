@@ -2,6 +2,7 @@
 @author: samiulsaki
 Web Visualisation using python flask app
 """
+
 import base64
 from time import time
 from flask import Flask, render_template, request
