@@ -42,7 +42,7 @@
     - [x] 6.3: Interactive visualization (8 points)
     - [x] 6.4: Visualization of CO2 emissions by country (10 points)
     - [x] 6.5: Documentation and help page (6 points)
-    - [ ] 6.6: Predicting the future (5 points)
+    - [x] 6.6: Predicting the future (5 points)
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#inf4331-aschowdh)
 - - - - 
@@ -74,7 +74,7 @@ Folder		|	Tasks	|	Files
 [*assignment6*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6)	                        | 6.2, 6.3        | web_visualization.py
 [*assignment6/static*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/static)              | Homepage Image  | globalWarming.jpg
 [*assignment6/sources*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/sources)            | Sources         | CO2_by_country.csv, co2.csv, temperature.csv
-[*assignment6/templates*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/templates)        | HTML Templates  | homepage.html, help.html, co2_global_page.html, co2_country_page.html, temperature_page.html
+[*assignment6/templates*](https://github.com/UiO-INF3331/INF3331-aschowdh/tree/master/assignment6/templates)        | HTML Templates  | homepage.html, help.html, co2_global_page.html, co2_country_page.html, temperature_page.html, predict_future_page.html
 
 [<kbd>↑</kbd>](https://github.com/UiO-INF3331/INF3331-aschowdh#repository-contents)
 
