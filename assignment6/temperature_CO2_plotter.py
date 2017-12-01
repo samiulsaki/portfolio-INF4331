@@ -5,7 +5,8 @@ The python script with following functions:
 (2) plot_temperature: Temperature (globally)
 (3) plot_CO2_global: Fossil-Fuel CO2 Emissions (globally)
 (4) plot_CO2_country: Fossil-Fuel CO2 Emissions (by country)
-(5) predicting_future: Prediction of the Future of CO2 Level
+(5) CO2Extrapolate: Function used to extrapolate the CO2 levels
+(6) predicting_future: Prediction of the Future of CO2 Level
 """
 
 import pandas as pd
@@ -13,6 +14,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import numpy as np
 import math
+import scipy.optimize as opt
 
 countryCO2CSV = pd.read_csv('sources/CO2_by_country.csv')
 globalCO2CSV = pd.read_csv('sources/co2.csv')
@@ -195,64 +197,41 @@ def plot_CO2_country(year, up=None, low=None,show_plot=False):
         plt.close()
     return images
 
-def predicting_future(month, years = 100, show_plot=False):
-
+def CO2Extrapolate(x, a, b, c, d, e):
     """
-    The function calculates and predicts the future of CO2 level over a given time (years) and 
-    returns them in a form of pyplot. It is based on a making a best fit plot on the scattered data 
-    of CO2 (co2) and tmperature (temp). From that we are able to calculate our ax+b and create a 
-    linear function where it shows the future predicatable level of CO2 level in next given years 
-    in a form of a curve. The estimation of next few years are only based on best predication and 
-    to use for research purposes only.
+    The function used to extrapolate the CO2 levels (as a function of time).
+    
+        @param x            years
+        @param a,b,c,d,e    parameters used for curve fitting
+        @return             polynomial plus exponential value
+    """
+    return a + b * x + c * np.exp(d * (x - e))
 
-        @param month        represents the first three letters of months in calender (e.g. jan, feb, mar ...)
+def predicting_future(years, show_plot=False):
+    """
+    The function calculates and predicts the future of CO2 level over a given time (years) and returns them 
+    in a form of pyplot. It is based on a making a best fit plot on the scattered data of CO2 (co2) and 
+    temperature (temp). From that we are able to calculate our a + b * x + c * np.exp(d * (x - e)) and it 
+    shows the future predicatable level of CO2 level in next given years in a form of a optimal curve. The estimation 
+    of next few years are only based on best predication and to use for research purposes only.
+
         @param years        represents the years in the future the prediction will need to be calculated for
         @param show_plot    shows the pyplot if set to True
         @return             returns the pyplot with the predicted level of CO2 level in next future years 
                             (user defined)
     """
-    # Setting up the empty arrays
-    temp = []; co2 = []; temp_years = []; co2_years = []
-    month = months[month]
-
-    for i in globalTempCSV["Year"]: temp_years.append(i)
-    for i in globalTempCSV[month]: temp.append(i)
+    co2_years = []
+    co2 = []
     for i in globalCO2CSV["Year"]: co2_years.append(i)
-    for i in globalCO2CSV["Carbon"]: co2.append(i)
+    for i in globalCO2CSV["Carbon"]: co2.append(float(i))
+    
+    # Let scipy find the optimal parameters for the CO2(year) interpolation.
+    CO2Optimal, CO2Cov = opt.curve_fit(CO2Extrapolate, co2_years, co2, bounds=([-100., 0., 0., 0., 0.], [100., 10., 3e-2, 3e-2, 2e3]))
+    CO2WithYear = np.linspace(min(co2_years), max(co2_years) + years, len(co2_years) * 100)
 
-    # Finding minimum and maximum of the years of temperature and co2 data set
-    startYearTemp = min(temp_years)
-    endYearTemp = max(temp_years)
-    startYearCO2 = min(co2_years)
-    endYearCO2 = max(co2_years)
-
-    # Checks each data sets and removes the data that does not have a corresponing entry in the other dataset
-    if (startYearTemp > startYearCO2): co2 = co2[co2_years.index(startYearTemp):]
-    elif ((startYearTemp < startYearCO2)): temp = temp[temp_years.index(startYearCO2):]
-    if (endYearTemp > endYearCO2): co2 = co2[co2_years.index(endYearTemp):]
-    elif (endYearTemp < endYearCO2): temp = temp[:temp_years.index(endYearCO2)]
-
-    # Converts to numpy arrays for polyfit
-    co2_np = np.asarray(co2,dtype=float)
-    temp_np = np.asarray(temp,dtype=float)
-
-    # Calculates the slope and intercept (ax+b) where a = slope and b = intercept
-    slope , intercept = np.polyfit(co2_np,temp_np,1)
-
-    # Creates n new data points as specified by the number of years submitted by the user
-    increase = co2[len(co2)-1]/co2[len(co2)-2]
-    for i in range(years):
-        co2.append((co2[len(co2)-1] * increase))
-        temp_years.append(temp_years[len(temp_years)-1] + 1)
-        increase = co2[len(co2) - 1] / co2[len(co2) - 2]
-
-    # Creates a new line based on the co2 level on co2 data set
-    co2_np = np.asarray(co2,dtype=float)
-    func = slope * co2_np + intercept
-
-    # Limits the plots for real and predicted data, plots them in different colors
-    plt.plot(temp_years[:len(temp_years) - years], func[:len(temp_years) - years] , '-g')
-    plt.plot(temp_years[len(temp_years) - years:], func[len(temp_years) - years:], '--r')
+    # Visualize CO2 as a function of time, and the extrapolation.
+    plt.plot(co2_years, co2)
+    plt.plot(CO2WithYear, CO2Extrapolate(CO2WithYear, *CO2Optimal))
     title = "Prediction of CO2 Level Over Next " + str(years) + " Years"
     xLabel = "Year"
     yLabel= "CO2 Level"
@@ -260,7 +239,6 @@ def predicting_future(month, years = 100, show_plot=False):
     if show_plot: plt.show()
     plt.close()
     return [image]
-
 
 if __name__ == "__main__":
     """
@@ -270,4 +248,4 @@ if __name__ == "__main__":
     plot_temperature('mar', 1850, 2005, None, None, show_plot=True)
     plot_CO2_global(1876, 1991, show_plot=True)
     plot_CO2_country(2000, up=10, low=6, show_plot=True)
-    predicting_future("mar", years = 50, show_plot=True)
+    predicting_future(years=10, show_plot=True)

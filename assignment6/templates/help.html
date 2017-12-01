@@ -15,7 +15,8 @@ The&nbsp;python&nbsp;script&nbsp;with&nbsp;following&nbsp;functions:<br>
 (2)&nbsp;plot_temperature:&nbsp;Temperature&nbsp;(globally)<br>
 (3)&nbsp;plot_CO2_global:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(globally)<br>
 (4)&nbsp;plot_CO2_country:&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;Emissions&nbsp;(by&nbsp;country)<br>
-(5)&nbsp;predicting_future:&nbsp;Prediction&nbsp;of&nbsp;the&nbsp;Future&nbsp;of&nbsp;CO2&nbsp;Level</tt></p>
+(5)&nbsp;CO2Extrapolate:&nbsp;Function&nbsp;used&nbsp;to&nbsp;extrapolate&nbsp;the&nbsp;CO2&nbsp;levels<br>
+(6)&nbsp;predicting_future:&nbsp;Prediction&nbsp;of&nbsp;the&nbsp;Future&nbsp;of&nbsp;CO2&nbsp;Level</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -24,17 +25,23 @@ The&nbsp;python&nbsp;script&nbsp;with&nbsp;following&nbsp;functions:<br>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
-</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
-</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="scipy.optimize.html">scipy.optimize</a><br>
+<a href="pandas.html">pandas</a><br>
 </td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
-</td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-plot_CO2_country"><strong>plot_CO2_country</strong></a>(year, up=None, low=None, show_plot=False)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;bar&nbsp;chart&nbsp;of&nbsp;the&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;emissions&nbsp;of&nbsp;individual&nbsp;countries&nbsp;at&nbsp;<br>
+<td width="100%"><dl><dt><a name="-CO2Extrapolate"><strong>CO2Extrapolate</strong></a>(x, a, b, c, d, e)</dt><dd><tt>The&nbsp;function&nbsp;used&nbsp;to&nbsp;extrapolate&nbsp;the&nbsp;CO2&nbsp;levels&nbsp;(as&nbsp;a&nbsp;function&nbsp;of&nbsp;time).<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;years<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;a,b,c,d,e&nbsp;&nbsp;&nbsp;&nbsp;parameters&nbsp;used&nbsp;for&nbsp;curve&nbsp;fitting<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polynomial&nbsp;plus&nbsp;exponential&nbsp;value</tt></dd></dl>
+ <dl><dt><a name="-plot_CO2_country"><strong>plot_CO2_country</strong></a>(year, up=None, low=None, show_plot=False)</dt><dd><tt>This&nbsp;function&nbsp;plots&nbsp;a&nbsp;bar&nbsp;chart&nbsp;of&nbsp;the&nbsp;Fossil-Fuel&nbsp;CO2&nbsp;emissions&nbsp;of&nbsp;individual&nbsp;countries&nbsp;at&nbsp;<br>
 different&nbsp;years&nbsp;within&nbsp;the&nbsp;given&nbsp;preset&nbsp;threshold&nbsp;from&nbsp;given&nbsp;data.&nbsp;It&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;image/<br>
 pyplot&nbsp;figures&nbsp;as&nbsp;a&nbsp;BytesIO&nbsp;object.<br>
 &nbsp;<br>
@@ -74,14 +81,12 @@ and&nbsp;then&nbsp;returns&nbsp;it&nbsp;to&nbsp;thefunction<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;minX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;minimum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;maxX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;maximum&nbsp;limit&nbsp;of&nbsp;X-axis<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;image(pyplot)&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;BytesIO&nbsp;object</tt></dd></dl>
- <dl><dt><a name="-predicting_future"><strong>predicting_future</strong></a>(month, years=100, show_plot=False)</dt><dd><tt>The&nbsp;function&nbsp;calculates&nbsp;and&nbsp;predicts&nbsp;the&nbsp;future&nbsp;of&nbsp;CO2&nbsp;level&nbsp;over&nbsp;a&nbsp;given&nbsp;time&nbsp;(years)&nbsp;and&nbsp;<br>
-returns&nbsp;them&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;pyplot.&nbsp;It&nbsp;is&nbsp;based&nbsp;on&nbsp;a&nbsp;making&nbsp;a&nbsp;best&nbsp;fit&nbsp;plot&nbsp;on&nbsp;the&nbsp;scattered&nbsp;data&nbsp;<br>
-of&nbsp;CO2&nbsp;(co2)&nbsp;and&nbsp;tmperature&nbsp;(temp).&nbsp;From&nbsp;that&nbsp;we&nbsp;are&nbsp;able&nbsp;to&nbsp;calculate&nbsp;our&nbsp;ax+b&nbsp;and&nbsp;create&nbsp;a&nbsp;<br>
-linear&nbsp;function&nbsp;where&nbsp;it&nbsp;shows&nbsp;the&nbsp;future&nbsp;predicatable&nbsp;level&nbsp;of&nbsp;CO2&nbsp;level&nbsp;in&nbsp;next&nbsp;given&nbsp;years&nbsp;<br>
-in&nbsp;a&nbsp;form&nbsp;of&nbsp;a&nbsp;curve.&nbsp;The&nbsp;estimation&nbsp;of&nbsp;next&nbsp;few&nbsp;years&nbsp;are&nbsp;only&nbsp;based&nbsp;on&nbsp;best&nbsp;predication&nbsp;and&nbsp;<br>
-to&nbsp;use&nbsp;for&nbsp;research&nbsp;purposes&nbsp;only.<br>
+ <dl><dt><a name="-predicting_future"><strong>predicting_future</strong></a>(years, show_plot=False)</dt><dd><tt>The&nbsp;function&nbsp;calculates&nbsp;and&nbsp;predicts&nbsp;the&nbsp;future&nbsp;of&nbsp;CO2&nbsp;level&nbsp;over&nbsp;a&nbsp;given&nbsp;time&nbsp;(years)&nbsp;and&nbsp;returns&nbsp;them&nbsp;<br>
+in&nbsp;a&nbsp;form&nbsp;of&nbsp;pyplot.&nbsp;It&nbsp;is&nbsp;based&nbsp;on&nbsp;a&nbsp;making&nbsp;a&nbsp;best&nbsp;fit&nbsp;plot&nbsp;on&nbsp;the&nbsp;scattered&nbsp;data&nbsp;of&nbsp;CO2&nbsp;(co2)&nbsp;and&nbsp;<br>
+temperature&nbsp;(temp).&nbsp;From&nbsp;that&nbsp;we&nbsp;are&nbsp;able&nbsp;to&nbsp;calculate&nbsp;our&nbsp;a&nbsp;+&nbsp;b&nbsp;*&nbsp;x&nbsp;+&nbsp;c&nbsp;*&nbsp;np.exp(d&nbsp;*&nbsp;(x&nbsp;-&nbsp;e))&nbsp;and&nbsp;it&nbsp;<br>
+shows&nbsp;the&nbsp;future&nbsp;predicatable&nbsp;level&nbsp;of&nbsp;CO2&nbsp;level&nbsp;in&nbsp;next&nbsp;given&nbsp;years&nbsp;in&nbsp;a&nbsp;form&nbsp;of&nbsp;a&nbsp;optimal&nbsp;curve.&nbsp;The&nbsp;estimation&nbsp;<br>
+of&nbsp;next&nbsp;few&nbsp;years&nbsp;are&nbsp;only&nbsp;based&nbsp;on&nbsp;best&nbsp;predication&nbsp;and&nbsp;to&nbsp;use&nbsp;for&nbsp;research&nbsp;purposes&nbsp;only.<br>
 &nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;first&nbsp;three&nbsp;letters&nbsp;of&nbsp;months&nbsp;in&nbsp;calender&nbsp;(e.g.&nbsp;jan,&nbsp;feb,&nbsp;mar&nbsp;...)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;years&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;represents&nbsp;the&nbsp;years&nbsp;in&nbsp;the&nbsp;future&nbsp;the&nbsp;prediction&nbsp;will&nbsp;need&nbsp;to&nbsp;be&nbsp;calculated&nbsp;for<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;show_plot&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;pyplot&nbsp;if&nbsp;set&nbsp;to&nbsp;True<br>
 &nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;the&nbsp;pyplot&nbsp;with&nbsp;the&nbsp;predicted&nbsp;level&nbsp;of&nbsp;CO2&nbsp;level&nbsp;in&nbsp;next&nbsp;future&nbsp;years&nbsp;<br>

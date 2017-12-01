@@ -116,12 +116,10 @@ def predict_future():
     """
     if request.method =="GET":
         return render_template("predict_future_page.html")
-    month = request.form["month"]
-    print(month)
     years = request.form["years"]    
-    args = [_str(month),_int(years)]
+    args = [_int(years)]
     plots = [base64.b64encode(plot.getvalue()).decode("ascii") for plot in predicting_future(*args)]
-    return render_template("predict_future_page.html", plots=plots, m = month, y = years)
+    return render_template("predict_future_page.html", plots=plots, y = years)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=5000)
