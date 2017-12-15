@@ -227,6 +227,3 @@ if __name__ == "__main__":
     elif usr_input == '0':
         print('Exiting....')
         exit
-
-    
-    

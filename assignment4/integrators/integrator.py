@@ -70,16 +70,15 @@ def precision(f,a,b,printf=False):
             break        
     return area
 
-#-----------------------------Run the program----------------------------------
-# Initial parameters: xmin, xmax, N (used)
 
-xmin = 0
-xmax = 1
-N = 100
+if __name__ == "__main__":
+    #-----------------------------Run the program----------------------------------
+    # Initial parameters: xmin, xmax, N (used)
 
+    xmin = 0
+    xmax = 1
+    N = 100
 
-# Please uncomment these following three lines to observe the plots in better way
-
-#print('Actual area:',F(xmin,xmax))
-#print('Approximation:',integrate(f,xmin,xmax,N))
-#print(precision(f,xmin,xmax,printf=True))
+    print('Actual area:',F(xmin,xmax))
+    print('Approximation:',integrate(f,xmin,xmax,N))
+    print(precision(f,xmin,xmax,printf=True))

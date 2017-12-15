@@ -38,4 +38,5 @@ def recursive(dir):
         print(os.path.abspath(root),file,sep="/")
 
 
-recursive(dir)
+if __name__ == "__main__":
+    recursive(dir)

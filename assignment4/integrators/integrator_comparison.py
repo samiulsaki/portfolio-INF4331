@@ -166,22 +166,24 @@ def find_n(x):
         N +=100             # Increased the N by 100. Can be changed larger values for faster calculation
     print('Value is found at N =',N,'with this: {} value'.format(Integrate))
 
-print('Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython\n')
-print('\n-----------------------------------------\n')
-print('Midpoint Pure Python Function:\n')
-find_n(midpoint_integrate)
-print('\n-----------------------------------------\n')
-print('Midpoint Numpy Function:\n')
-find_n(midpoint_numpy_integrate)
-print('\n-----------------------------------------\n')
-print('Midpoint Numba Function:\n')
-find_n(midpoint_numba_integrate)
-print('\n-----------------------------------------\n') 
-print('Midpoint Cython Function:\n')
-find_n(midpoint_cython_integrate)
-print('\n-----------------------------------------\n')
 
-# Just in case you want to see more information
+if __name__ == "__main__":
+    print('Midpoint Integration Comparison: Pure vs Numpy vs Numba vs Cython\n')
+    print('\n-----------------------------------------\n')
+    print('Midpoint Pure Python Function:\n')
+    find_n(midpoint_integrate)
+    print('\n-----------------------------------------\n')
+    print('Midpoint Numpy Function:\n')
+    find_n(midpoint_numpy_integrate)
+    print('\n-----------------------------------------\n')
+    print('Midpoint Numba Function:\n')
+    find_n(midpoint_numba_integrate)
+    print('\n-----------------------------------------\n') 
+    print('Midpoint Cython Function:\n')
+    find_n(midpoint_cython_integrate)
+    print('\n-----------------------------------------\n')
 
-#error()
-#performance()
+    
+    # Just in case you want to see more information
+    error()
+    performance()

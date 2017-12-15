@@ -32,15 +32,15 @@ def midpoint_cython_integrate(f_cy, a_cy, b_cy, N_cy):
     sum_cy *= width_cy
     return sum_cy
 
+if __name__ == "__main__":
+    a_cy=1E-20
+    b_cy=1E07
+    N_cy=1000000
 
-a_cy=1E-20
-b_cy=1E07
-N_cy=1000000
+    expected_cy = F_cy(b_cy) - F_cy(a_cy)
+    computed_cy = (midpoint_cython_integrate(f_cy,a_cy,b_cy,N_cy))
 
-expected_cy = F_cy(b_cy) - F_cy(a_cy)
-computed_cy = (midpoint_cython_integrate(f_cy,a_cy,b_cy,N_cy))
-
-print('N =',N_cy)
-print('---------------------------------------')
-print('Computed\t:', computed_cy,'\nExpected\t:', expected_cy)
-print('---------------------------------------')
+    print('N =',N_cy)
+    print('---------------------------------------')
+    print('Computed\t:', computed_cy,'\nExpected\t:', expected_cy)
+    print('---------------------------------------')

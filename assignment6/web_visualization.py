@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 @author: samiulsaki
 Web Visualisation using python flask app
