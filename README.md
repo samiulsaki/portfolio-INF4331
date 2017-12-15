@@ -1,6 +1,4 @@
-# INF4331-aschowdh #
-
-## *Problemløsning med høynivå-språk - UiO /2017* ##
+# *Problemløsning med høynivå-språk - UiO /2017* #
 
 * ___[Assignment 1](https://github.com/UiO-INF3331/INF3331-aschowdh/blob/master/assignment1/assignment_1.pdf) : (git intro): 5 Points___
 	- [x] 1.1: First git repository
